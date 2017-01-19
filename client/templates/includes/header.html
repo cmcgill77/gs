@@ -1,0 +1,60 @@
+<template name="header">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{pathFor 'home'}}"><img src="osint_logo_new.png"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="navigation">
+        <!-- if user is logged in display map button -->
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}<li class="{{activeRouteClass 'map'}}"><a href="{{pathFor 'map'}}"> 
+            <span class="postButton" aria-hidden="true"><i class="fa fa-globe"></i></span>
+          Map</a></li>{{/if}}
+        </ul>
+        <!-- list view button chronological -->
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}<li class="{{activeRouteClass 'home' 'newPosts'}}"><a href="{{pathFor 'newPosts'}}">
+            <span class="postButton" aria-hidden="true"><i class="fa fa-th"></i></span>
+            List by date</a></li>{{/if}}
+        </ul>
+        <!-- list view button weighted -->
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}<li class="{{activeRouteClass 'bestPosts'}}"><a href="{{pathFor 'bestPosts'}}">
+          <span class="postButton" aria-hidden="true"><i class="fa fa-th"></i></span>
+          List by score</a></li>{{/if}}
+        </ul>
+        <!-- new post button -->       
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}<li class="{{activeRouteClass 'postSubmit'}}"><a href="{{pathFor 'postSubmit'}}">
+            <span class="postButton" aria-hidden="true"><i class="fa fa-plus-circle"></i></span>
+          New Post</a></li>{{/if}}
+        </ul>
+        <!-- notifications -->
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}<li class="dropdown">
+              {{> notifications}}
+            </li>{{/if}}
+        </ul>
+        <!-- feeds button -->
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}<li class="{{activeRouteClass 'feedsList'}}"><a href="{{pathFor 'feedsList'}}">
+            <span class="postButton" aria-hidden="true"><i class="fa fa-asterisk"></i></span>
+          Feeds</a></li>{{/if}}
+        </ul>
+        
+        <!-- login widget -->
+        <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons}}
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+</template>

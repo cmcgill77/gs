@@ -1,0 +1,75 @@
+<template name="feedsList">
+  
+<div class="container-fluid">
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+  
+ 
+  <ul> 
+  <div>
+    <button style="width: 50px; height: 50px; display:inline" class="newFeedButton btn btn-default btn-lg"><i class="fa fa-plus"></i></button>
+    <h5 style="display:inline; padding-top:10px;">Add Feed</h5>
+  </div>
+  </ul> 
+   
+    
+    <ul>
+      {{#each list}}
+        <li class="feed {{selectedClass}}"><img style="width: 50px; height: 50px"  src="{{feedType}}"> {{name}}
+        {{#if selectedClass}}  
+          
+            <!--<button type="submit" class="decrement btn btn-default">Demote</button>-->
+            <!--<button type="submit" class="increment btn btn-primary">Promote</button>-->
+            
+          <div class="increment">
+            
+            <i class="fa fa-chevron-up"></i>
+            
+          </div>
+          <div class="decrement">
+            <i class="fa fa-chevron-down"></i>
+          </div>
+            <div class="remove">
+              <i class="fa fa-times"></i>
+          </div>
+            <button type="submit" class="run btn btn-default">Run</button>
+        {{/if}}
+        </li>
+     {{/each}}
+  </ul>
+  
+</div>
+
+<div class="col-xs-6 col-md-6">
+ 
+  
+  {{#if showSelectedFeed}}
+  <ul>  
+  <div class="feed-details">
+      
+        <h5>Feed Details</h5>
+          <ul>
+            <blockquote>
+              <li>Feed Type: {{showSelectedFeed.type}}</li>
+              <li>Query: {{showSelectedFeed.query}}</li>
+              <li>Weight: {{showSelectedFeed.score}}</li>
+              <li>Created by: {{showSelectedFeed.createdBy}}</li>
+              <li>Location: {{showSelectedFeed.location}}</li>
+              <li>Lat: {{showSelectedFeed.latitude}}</li>
+              <li>Lon: {{showSelectedFeed.longitude}}</li>
+              <li>Radius: {{showSelectedFeed.radius}}</li>
+              <li>Geo Search?: {{showSelectedFeed.geo}}</li>
+            </blockquote>
+          </ul>
+    
+    </div>
+  </ul>
+  {{/if}} 
+</div>
+</div>
+</div>
+  
+</template>
+

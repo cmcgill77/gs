@@ -1,0 +1,84 @@
+<template name="postSubmit">
+  
+<div class="container-fluid">
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+
+<div class="row">
+  <div id="submit-report-form" class="col-xs-12 col-md-6"> <!-- row containing submit report form -->
+ 
+    <h6 style="background-color: #F5F5F5"><img style="width: 30px; height: 30px"  src="new_report.PNG"><b> Create new report</b></h6>
+    
+  <form class="main form">
+    <fieldset>
+    
+    
+    
+    <div class="form-group {{errorClass 'title'}}">
+      <label class="col-lg-2 control-label" for="title"><b>Title</b></label>
+      <div class="col-lg-10 controls">
+          <input name="title" id="title" type="text" value="" placeholder="Name your report" class="form-control"/>
+          <span class="help-block">{{errorMessage 'title'}}</span>
+      </div>
+    </div>
+    
+    <div class="form-group {{errorClass 'url'}}">
+      <label class="col-lg-2 control-label" for="url"><b>Report URL</b></label>
+      <div class="col-lg-10 controls">
+          <input name="url" id="url" type="text" value="" placeholder="Include a link in your report" class="form-control"/>
+          <span class="help-block">{{errorMessage 'url'}}</span>
+      </div>
+    </div>
+    
+    <div class="form-group {{errorClass 'body'}}">
+      <label class="col-lg-2 control-label" for="title"><b>Body</b></label>
+      <div class="col-lg-10 controls">
+          <textarea name="body" id="body" type="text" value="" placeholder="Report summary" class="form-control" rows ="3"></textarea>
+          <span class="help-block"></span>
+      </div>
+    </div>
+    
+         
+   <div class="form-group">
+     <label for="address" class="col-lg-2 control-label"><b>Location</b></label>
+              <div class="col-lg-10 controls">
+                <input name="location" type="text" value="" class="form-control" id="address" placeholder="Street Address" disabled="">
+                <span class="help-block">Drag and drop the marker on the map to pick a location</span>
+              </div>
+              </div> 
+                  
+                
+              
+   
+ 
+  
+
+  
+         
+
+<div class="col-lg-10 col-lg-offset-2">
+    
+    <span class="label label-default">Lat.:</span> 
+    <input type="text" id="lat" disabled=""/>  
+    <span class="label label-default">Long.:</span> 
+    <input type="text" id="lon" disabled=""/> 
+          
+</div>             
+
+      <div class="col-lg-9 col-lg-offset-8" style="margin-top: 10px">
+        <button type="reset" class="btn btn-link"><i class="fa fa-eraser"></i> Clear</button>
+        <button type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i> Submit</button>
+      </div>    
+        
+    </fieldset> 
+  </form>
+    
+  
+    
+  </div>
+  <div class="col-xs-6 col-md-6">  <!-- row containing location picker map -->
+    <div id="us2" style="width: 100%; height: 900px;"></div>	
+  </div>
+  
+  </div>
+  </div>
+</template>

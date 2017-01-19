@@ -1,0 +1,23 @@
+<template name="postPage">
+  {{tags}}
+
+  <div class="panel panel-default">
+  <div class="panel-body">
+    {{body}}
+    location: {{location}}
+    coordinates: {{latitude}}, {{longitude}}
+    geolocationtype: {{geolocationType}}
+  </div>
+</div>
+  <ul class="comments">
+    {{#each comments}}
+      {{> commentItem}}
+    {{/each}}
+  </ul>
+
+  {{#if currentUser}}
+    {{> commentSubmit}}
+  {{else}}
+    <p>Please log in to leave a comment.</p>
+  {{/if}}
+</template>

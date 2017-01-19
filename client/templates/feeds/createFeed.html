@@ -1,0 +1,24 @@
+<template name="createFeed">
+  
+  <ul class="nav nav-tabs">
+  <li class="active"><a href="#twitter" data-toggle="tab" aria-expanded="true"><i class="fa fa-twitter"></i> Twitter</a></li>
+  <li class=""><a href="#rss" data-toggle="tab" aria-expanded="false"><i class="fa fa-rss"></i> RSS</a></li>
+  <li class=""><a href="#instagram" data-toggle="tab" aria-expanded="false"><i class="fa fa-instagram"></i> Instagram</a></li>
+  <li class=""><a href="#youtube" data-toggle="tab" aria-expanded="false"><i class="fa fa-youtube"></i> Youtube</a></li>  
+  </ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="twitter">
+    {{> createTwitterFeed}}
+   
+  </div>
+  <div class="tab-pane fade" id="rss">
+    {{> createRSSFeed}}
+  </div>
+  <div class="tab-pane fade" id="instagram">
+    <p>Instagram feeds coming soon!</p>
+  </div>
+  <div class="tab-pane fade" id="youtube">
+    <p>Youtube feeds coming soon!</p>
+  </div>
+</div>
+</template>

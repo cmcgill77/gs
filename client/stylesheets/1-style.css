@@ -1,0 +1,353 @@
+me.grid-block, .main, .comments li, .comment-form {
+  background: #FFFFFF;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  padding: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+
+}
+
+.post {
+
+  padding: 0px;
+}
+  
+body {
+  background: #FFFFFF; /* #eee alternate color light gray */
+  color: #666666;
+  padding-top: 64px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+ 
+}
+  /* line 32, ../sass/style.scss */
+  .navbar .navbar-default .navbar-header .navbar-inner .container {
+    -webkit-border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -ms-border-radius: 0px 0px 0px 0px;
+    -o-border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px; 
+  }
+
+
+#spinner {
+  height: 300px; }
+
+.post {
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1;
+  padding: 0.25%;
+  position: relative;
+  opacity: 1; }
+  .post:before, .post:after {
+    content: "";
+    display: table; }
+  .post:after {
+    clear: both; }
+  .post.invisible {
+    opacity: 0; }
+  .post.instant {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none; }
+  .post.animate{
+    -webkit-transition: all 300ms 0ms;
+    -webkit-transition-delay: ease-in;
+    -moz-transition: all 300ms 0ms ease-in;
+    -o-transition: all 300ms 0ms ease-in;
+    transition: all 300ms 0ms ease-in; }
+  .post .upvote {
+/*     background-color: #666666; */
+    display: block;
+    font-size: 12px;
+    margin: 0px 10px 0px 0px;
+    margin-top: -12px;
+    float: left;
+    font-size: 16px;
+    
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 35px;
+    
+  }
+  .post .post-content {
+    float: left;
+    padding: 0%;
+  }
+    .post .post-content h3 {
+      margin: 0;
+      line-height: 1.4;
+      font-size: 18px; }
+      .post .post-content h3 a {
+        display: inline-block;
+        font-size: 14px;
+        margin-right: 5px; }
+      .post .post-content h3 span {
+        font-weight: normal;
+        font-size: 14px;
+        display: inline-block;
+        color: #aaaaaa; }
+    .post .post-content p {
+      margin: 0;
+      
+    }
+ 
+  .post .discuss {
+    display: inline;
+    float: right;
+    font-size: 12px;
+    margin: 0%;
+        
+    }
+
+   .post .details {
+     display: inline;
+     float: right;
+     font-size: 12px;
+     margin: 0%;
+     
+   }
+
+.comments {
+  list-style-type: none;
+  margin: 0; }
+  .comments li h4 {
+    font-size: 16px;
+    margin: 0; }
+    .comments li h4 .date {
+      font-size: 12px;
+      font-weight: normal; }
+    .comments li h4 a {
+      font-size: 12px; }
+  .comments li p:last-child {
+    margin-bottom: 0; }
+
+.dropdown-menu span {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  line-height: 20px;
+  color: #bbb;
+  white-space: nowrap; }
+
+.load-more {
+  display: block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0);
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  margin-bottom: 0px;
+  border-bottom: 10px}
+  .load-more:hover {
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.125); }
+
+.posts .spinner-container{
+  position: relative;
+  height: 100px;
+}
+
+.jumbotron{
+  text-align: center;
+}
+.jumbotron h2{
+  font-size: 60px;
+  font-weight: 100;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.errors{
+  position: fixed;
+  z-index: 10000;
+  padding: 10px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  pointer-events: none;
+}
+.alert {
+          animation: fadeOut 8700ms ease-in 0s 1 forwards;
+  -webkit-animation: fadeOut 8700ms ease-in 0s 1 forwards;
+     -moz-animation: fadeOut 8700ms ease-in 0s 1 forwards;
+  width: 250px;
+  float: right;
+  clear: both;
+  margin-bottom: 5px;
+  pointer-events: auto;
+}
+
+/* tweaking default style */
+
+  .form-horizontal {
+    margin: 0% 30% 0% 30%;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .post {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-table;
+    width: 100%;
+  }
+
+  .post .btn {
+    margin-bottom: 0%;
+    
+  }
+
+  .vertical-align {
+    display: flex;
+    align-items: center;
+  }
+
+  
+  .navbar-nav {
+   padding-top: 0px;
+   
+   font-size: 14px;
+   
+  }
+
+  .navbar-nav span {
+    font-size: 16px;
+  }
+
+  .post-content span {
+    font-size: 40px;
+  }
+
+  .postButton {
+    color: #FFD119;
+    
+  }
+
+ #edit {
+   font-size: 20px; 
+ }
+
+ #comment {
+   margin-right: 5px;
+ }
+
+  #divider {
+   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); } 
+  
+  #comment-button {
+    margin: 0px, 0px, 0px, 0px;
+    padding: 0px, 0px, 0px, 0px;
+   
+  }
+
+  .nav navbar-nav {
+    margin-top: 0px;
+   }
+
+.navbar-brand {
+  padding-top: 7px;
+}
+
+#mapcanvas { height: 910px; }
+
+/* overwrite material design colors */
+
+.navbar-default .navbar-nav > .active{
+    color: #000;
+   background: #a5a5a5;
+ }
+
+.navbar-default .navbar-nav .dropdown-toggle > .active{
+    color: #000;
+   background: #a5a5a5;
+}
+
+ .navbar-default .navbar-nav  > .active > a .dropdown-toggle, 
+ .navbar-default .navbar-nav > .active > a .dropdown-toggle:hover, 
+ .navbar-default .navbar-nav > .active > a .dropdown-toggle:focus {
+      color: #000;
+      background: #a5a5a5;
+ }
+
+ .navbar-default .navbar-nav  > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+      color: #000;
+      background: #a5a5a5;
+ }
+
+.navbar-default .navbar-nav > .active > ul, 
+ .navbar-default .navbar-nav > .active > ul:hover, 
+ .navbar-default .navbar-nav > .active > ul:focus {
+      color: #000;
+      background: #a5a5a5;
+ }
+
+.navbar-default {
+    background-color: #424242;
+    border-radius: 0px 0px 0px 0px;
+    
+  }
+
+
+}
+
+.details {
+  background-color: #0288D1;
+}
+
+h3 a {
+  color: #424242;
+}
+
+.btn btn-primary {
+  background-color: #424242
+}
+
+#submit-report-form {
+  height: 100%;
+  width: 100%;
+  border: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px, 0px, 0px, 0px
+}
+
+h6 {
+  font-size: 18;
+}
+

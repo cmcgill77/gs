@@ -1,0 +1,26 @@
+<template name="map">
+   <div class="container-fluid" id="mapcontainer">
+     <div class="row-fluid">
+      <div id="mapcanvas"></div>
+   </div>
+
+  </div>
+
+  <div id="sidebar">
+   <div>
+     {{> postItem getPostbyID}}
+   </div>
+
+ </div>
+
+<script>
+
+  $(window).resize(function () {
+  var h = $(window).height(), offsetTop = 64; // Calculate the top offset
+  $mc = $('#mapcanvas');
+  $mc.css('height', (h - offsetTop));
+}).resize();
+
+</script>
+
+</template>

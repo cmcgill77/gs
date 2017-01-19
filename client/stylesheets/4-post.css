@@ -1,0 +1,43 @@
+.card-front {
+  
+}
+
+.card-back {
+  
+}
+
+.post-card {
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(218,218,218,1);
+-moz-box-shadow: 1px 1px 2px 1px rgba(218,218,218,1);
+box-shadow: 1px 1px 2px 1px rgba(218,218,218,1);
+  height: 215px;
+  padding: 0px;
+  
+  margin: 0px;
+  border-radius: 1px;
+}
+
+.title-card {
+  background-color: #e8e8e8;
+  padding-top: 5px;
+  padding-left: 10px;
+  margin-right: 4px;
+  margin-top: -1px;
+  border-left: 0px;
+  margin-left: -6px;
+  border-top: -1;
+}
+
+.title-image {
+  padding-top: 0px;
+  padding-left: 0x;
+  padding-bottom: 3px;
+  margin-right: 100px;
+  margin-top: -1px;
+  border-right: 100px;
+  border-left: 100px;
+  margin-left: 0px;
+  border-top: -1;
+  height: 60px;
+  width: 60px;
+}
