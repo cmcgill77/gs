@@ -299,7 +299,7 @@ Meteor.methods({
      console.log('inserted post for tweet ' + i);
 
 //insert source data into sources collection
-
+var currentUserId = Meteor.userId();
 var postAuthor = Sources.find({author: twitterPost.author}).fetch();
    console.log(postAuthor);
    var sourcePostCount = postAuthor.sourcePostCount;
@@ -310,7 +310,14 @@ var postAuthor = Sources.find({author: twitterPost.author}).fetch();
      console.log ('current source post count is ' + postAuthor[0].sourcePostCount);
 
      var newPostCount = postAuthor[0].sourcePostCount + 1;
-     Sources.update(postAuthor[0]._id, {soucePostCount: newPostCount});
+     Sources.update(postAuthor[0]._id, {
+       author: twitterPost.author,
+       type: 'twitter',
+       image: twitterPost.image,
+       sourcePostCount: newPostCount,
+       lastPost: twitterPost.submitted,
+       createdBy: currentUserId
+      });
 
      console.log ('post count by this source has been updated to ' + newPostCount);
    }
@@ -320,7 +327,8 @@ var postAuthor = Sources.find({author: twitterPost.author}).fetch();
        type: 'twitter',
        image: twitterPost.image,
        sourcePostCount: 1,
-       lastPost: twitterPost.submitted
+       lastPost: twitterPost.submitted,
+       createdBy: currentUserId
      })
      console.log ('new source created');
      newSource = Sources.find({author: twitterPost.author})

@@ -5,7 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "babel-runtime": "^6.18.0",
+    "babel-runtime": "^6.20.0",
     "leaflet-extra-markers": "^1.0.6",
     "leaflet-geosearch": "^1.0.0",
     "leaflet.markercluster": "^1.0.0",

@@ -25,3 +25,12 @@ Meteor.publish ('theFeeds', function() {
     var currentUserId = this.userId;
     return feedsList.find({createdBy: currentUserId});
   });
+
+Meteor.publish ('sources', function() {
+    var currentUserId = this.userId;
+    return Sources.find({createdBy: currentUserId});
+});
+
+Meteor.publish('postsBySource', function(author){
+  return Posts.find();
+});

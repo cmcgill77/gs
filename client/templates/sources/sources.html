@@ -1,0 +1,23 @@
+<template name="sources">
+  <title>Sources</title>
+  <h4>Sources</h4>
+
+    <div>
+
+      <ul>
+        {{#each listSources}}
+          <li>Type: {{type}} Name: {{author}} Count: {{postCount}}</li>
+          {{#each postsBySource}}
+          <div class="col-md-3" style="padding-left: 5px; padding-right: 5px; padding-bottom: 10px;">
+           <div class="post-card">
+          {{> postItem}}
+            </div>
+            </div>
+        {{/each}}
+        {{/each}}
+      </ul>
+
+
+    </div>
+
+</template>
