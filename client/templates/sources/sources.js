@@ -11,5 +11,8 @@ Template.sources.helpers({
   },
   'postCount': function() {
     return Posts.find({author: this.author}).count();
+  },
+  'sourceID': function () {
+    return this.author
   }
 });
