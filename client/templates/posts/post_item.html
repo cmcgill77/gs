@@ -1,27 +1,27 @@
 <template name="postItem">
-  
+
 
   <div class="post" {{attributes}}>
-   
-  
-     
-     
-    <div class="title-card"> 
+
+
+
+
+    <div class="title-card">
       <div class="row">
         <div class="col-md-2">
           <img class="title-image" src={{image}}>
         </div>
         <div class="col-md-10">
        <h6><a data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{body}}" href="{{url}}">{{title}}</a></h6>
-       <span>{{domain}}</span>
+       <span>{{domain}} <i class="fa fa-crosshairs {{locationClass}}" aria-hidden="true"></i></span>
         </div>
-        
+
      </div>
    </div>
-     
-  <div class="card-grid">  
+
+  <div class="card-grid">
   <div class="card-front">
-    
+
       <ul>
       <li>
         {{pluralize votes "Vote"}},
@@ -31,32 +31,32 @@
         <li>Verified: </li>
         <li>Credibility Rating: </li>
       </ul>
-   
-        
+
+
         <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
-          
+
       <a href="#" class="upvote btn btn-default {{upvotedClass}}" style=""><i class="fa fa-thumbs-up"></i></a>
-       
-     
-      
-     
+
+
+
+
       <a style="color: #424242;" href="{{pathFor 'postPage'}}" class="details btn btn-link"><i class="fa fa-ellipsis-v"></i> Details</a>
       {{#if ownPost}}<a style="color: #424242;" href="{{pathFor 'postEdit'}}" class="discuss btn btn-link"><i class="fa fa-pencil"></i> Edit</a>{{/if}}
       <a style="color: #424242;" href="{{pathFor 'postVerify'}}" class="discuss btn btn-link"><i class="fa fa-check"></i> Verify</a>
-        
-      
-   
-   
-          
+
+
+
+
+
     </div>
     <div class="card-back">
       <h5>Back of Card</h5>
       <p>This is the card back.  Additional information goes here.  Source credibility info, report verification info, etc.</p>
-      
-     
+
+
      </div>
     </div>
     </div>
-  
-  
+
+
 </template>

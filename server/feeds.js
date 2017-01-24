@@ -3,6 +3,10 @@
 //initialize geocoder just using google for default for now TODO use OSM / Mapquest for geocoder provider after google rate limit is reached move this function to top of feeds.js
 // AIzaSyBA3dFwtiLtM3H-F9Kkl_F7ez52ubPXE8I
 
+function parseTwitterDate(text) {
+return new Date(Date.parse(text.replace(/( +)/, ' UTC$1')));
+}
+
 Meteor.methods({
   'insertFeedData': function(feed, isLocationBased) {
     var currentUserId = Meteor.userId();
@@ -81,6 +85,7 @@ Meteor.methods({
       userId: user,
       author: tweets.statuses[i].user.screen_name,
       submitted: new Date(),
+      created: parseTwitterDate(tweets.statuses[i].created_at),
       commentsCount: 0,
       upvoters: [],
       votes: 0,
@@ -102,6 +107,7 @@ Meteor.methods({
       userId: owner._id,
       author: twitterPost.author,
       submitted: new Date(),
+      created: twitterPost.created,
       commentsCount: 0,
       upvoters: [],
       votes: 0,
@@ -225,6 +231,7 @@ Meteor.methods({
              userId: user,
              author: tweets.statuses[i].user.screen_name,
              submitted: new Date(),
+             created: parseTwitterDate(tweets.statuses[i].created_at),
              commentsCount: 0,
              upvoters: [],
              votes: 0,
@@ -250,6 +257,7 @@ Meteor.methods({
       userId: user,
       author: tweets.statuses[i].user.screen_name,
       submitted: new Date(),
+      created: parseTwitterDate(tweets.statuses[i].created_at),
       commentsCount: 0,
       upvoters: [],
       votes: 0,
@@ -279,6 +287,7 @@ Meteor.methods({
       userId: owner._id,
       author: twitterPost.author,
       submitted: new Date(),
+      created: twitterPost.created,
       commentsCount: 0,
       upvoters: [],
       votes: 0,
@@ -377,6 +386,7 @@ console.log ('--------------------------');
       userId: user,
       author: feedData.title,
       submitted: new Date(),
+      created: new Date(),
       commentsCount: 0,
       upvoters: [],
       votes: 0,
@@ -394,6 +404,7 @@ console.log ('--------------------------');
       userId: owner._id,
       author: newsPost.author,
       submitted: new Date(),
+      created: newsPost.created,
       commentsCount: 0,
       upvoters: [],
       votes: 0,

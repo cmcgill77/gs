@@ -12,11 +12,15 @@ me.grid-block, .main, .comments li, .comment-form {
 
 }
 
+.profile {
+  color: rgb(104, 176, 37)
+}
+
 .post {
 
   padding: 0px;
 }
-  
+
 body {
   background: #FFFFFF; /* #eee alternate color light gray */
   color: #666666;
@@ -25,7 +29,7 @@ body {
 
 .navbar {
   margin-bottom: 0px;
- 
+
 }
   /* line 32, ../sass/style.scss */
   .navbar .navbar-default .navbar-header .navbar-inner .container {
@@ -33,7 +37,7 @@ body {
     -moz-border-radius: 0px 0px 0px 0px;
     -ms-border-radius: 0px 0px 0px 0px;
     -o-border-radius: 0px 0px 0px 0px;
-    border-radius: 0px 0px 0px 0px; 
+    border-radius: 0px 0px 0px 0px;
   }
 
 
@@ -73,13 +77,13 @@ body {
     margin-top: -12px;
     float: left;
     font-size: 16px;
-    
+
     border-radius: 50%;
     height: 50px;
     width: 50px;
     text-align: center;
     line-height: 35px;
-    
+
   }
   .post .post-content {
     float: left;
@@ -100,15 +104,15 @@ body {
         color: #aaaaaa; }
     .post .post-content p {
       margin: 0;
-      
+
     }
- 
+
   .post .discuss {
     display: inline;
     float: right;
     font-size: 12px;
     margin: 0%;
-        
+
     }
 
    .post .details {
@@ -116,7 +120,7 @@ body {
      float: right;
      font-size: 12px;
      margin: 0%;
-     
+
    }
 
 .comments {
@@ -226,7 +230,7 @@ body {
 
   .post .btn {
     margin-bottom: 0%;
-    
+
   }
 
   .vertical-align {
@@ -234,12 +238,12 @@ body {
     align-items: center;
   }
 
-  
+
   .navbar-nav {
    padding-top: 0px;
-   
+
    font-size: 14px;
-   
+
   }
 
   .navbar-nav span {
@@ -252,11 +256,11 @@ body {
 
   .postButton {
     color: #FFD119;
-    
+
   }
 
  #edit {
-   font-size: 20px; 
+   font-size: 20px;
  }
 
  #comment {
@@ -266,12 +270,12 @@ body {
   #divider {
    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); } 
-  
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
+
   #comment-button {
     margin: 0px, 0px, 0px, 0px;
     padding: 0px, 0px, 0px, 0px;
-   
+
   }
 
   .nav navbar-nav {
@@ -296,22 +300,22 @@ body {
    background: #a5a5a5;
 }
 
- .navbar-default .navbar-nav  > .active > a .dropdown-toggle, 
- .navbar-default .navbar-nav > .active > a .dropdown-toggle:hover, 
+ .navbar-default .navbar-nav  > .active > a .dropdown-toggle,
+ .navbar-default .navbar-nav > .active > a .dropdown-toggle:hover,
  .navbar-default .navbar-nav > .active > a .dropdown-toggle:focus {
       color: #000;
       background: #a5a5a5;
  }
 
- .navbar-default .navbar-nav  > .active > a, 
- .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav  > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
       color: #000;
       background: #a5a5a5;
  }
 
-.navbar-default .navbar-nav > .active > ul, 
- .navbar-default .navbar-nav > .active > ul:hover, 
+.navbar-default .navbar-nav > .active > ul,
+ .navbar-default .navbar-nav > .active > ul:hover,
  .navbar-default .navbar-nav > .active > ul:focus {
       color: #000;
       background: #a5a5a5;
@@ -320,7 +324,7 @@ body {
 .navbar-default {
     background-color: #424242;
     border-radius: 0px 0px 0px 0px;
-    
+
   }
 
 
@@ -350,4 +354,3 @@ h3 a {
 h6 {
   font-size: 18;
 }
-
