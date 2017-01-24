@@ -14,3 +14,22 @@
   line-height: 15px;
 
 }
+
+.source-button {
+  width: 400px;
+}
+
+.source-author {
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 15px;
+  line-height: 15px;
+  float: left;
+}
+
+.badge-count {
+
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}

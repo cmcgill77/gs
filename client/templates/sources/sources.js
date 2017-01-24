@@ -14,5 +14,17 @@ Template.sources.helpers({
   },
   'sourceID': function () {
     return this.author
+  },
+  'sourceType': function(){
+    var typeId = this.type;
+    if (typeId === 'RSS') {
+      return "Rss_Icon.png"
+    }
+    else if (typeId === 'twitter') {
+      return "Twitter_icon_blue.png"
+    }
+    else {
+      return "Instagram_icon_flat.png"
+    }
   }
 });
