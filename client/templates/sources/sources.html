@@ -1,36 +1,24 @@
 <template name="sources">
   <title>Sources</title>
   <h4>Sources</h4>
-
     <div>
-
       <ul>
         {{#each listSources}}
         <div class="row">
-          <li>Type: {{type}} Name: {{author}} Count: {{postCount}}<button data-toggle="collapse" data-target="#sourceID">Collapse</button></li>
-
-
-        <div>
-
+          <li>Type: {{type}} Name: {{author}} Count: {{postCount}}<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{sourceID}}" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button></li>
+        <div class="collapse" id="{{sourceID}}">
           {{#each postsBySource}}
           <div class="col-md-3" style="padding-left: 5px; padding-right: 5px; padding-bottom: 10px;">
            <div class="post-card">
           {{> postItem}}
             </div>
             </div>
-
         {{/each}}
         </div>
       </div>
-
-
         {{/each}}
-
       </ul>
-
-
     </div>
-
-
-
 </template>
