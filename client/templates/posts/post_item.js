@@ -44,6 +44,7 @@ Template.postItem.helpers({
       return 'disabled';
     }
   },
+
   attributes: function() {
     var post = _.extend({}, Positions.findOne({postId: this._id}), this);
     var newPosition = post._rank * POST_HEIGHT;
@@ -57,7 +58,6 @@ Template.postItem.helpers({
       if (delta === 0)
         attributes.class = "post animate"
     }
-
 
     Meteor.setTimeout(function() {
       Positions.upsert({postId: post._id}, {$set: {position: newPosition}})

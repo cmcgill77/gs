@@ -207,6 +207,27 @@ Template.postVerify.helpers({
     return streetView;
   },
 
+});
+
+Template.postVerify.events({
+  'submit form': function(event) {
+    event.preventDefault();
+
+    var verificationData = {
+      postId : this._id,
+      verificationScore : Session.get ('currentRating')
+
+      }
+
+
+
+      Meteor.call('addVerificationData', verificationData);
+
+
+    Router.go('home');
+
+  }
+
 
 
 

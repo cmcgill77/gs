@@ -30,6 +30,12 @@ Meteor.methods({
   'modifyFeedScore': function(selectedFeed, scoreValue) {
     feedsList.update(selectedFeed, {$inc: {score: scoreValue}});
   },
+  'addVerificationData': function(verificationData) {
+    Posts.update (verificationData.postId, {$set: {
+      verified : true,
+      verificationScore : verificationData.verificationScore
+    }});
+  },
 
   'twitterQuery': function(selectedFeed) {
 

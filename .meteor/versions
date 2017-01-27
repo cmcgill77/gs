@@ -80,7 +80,7 @@ peppelg:bootstrap-3-modal@1.0.4
 promise@0.8.8
 random@1.0.10
 rate-limit@1.0.6
-reactive-dict@1.0.5
+reactive-dict@1.1.1
 reactive-var@1.0.11
 reload@1.1.11
 retry@1.0.9
