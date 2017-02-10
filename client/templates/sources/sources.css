@@ -1,0 +1,8 @@
+/*.collapse.width, .collapsing {
+    height: 100%; /* depending on your element height */
+    /*overflow: hidden;
+    -webkit-transition: width 0.25s ease;
+    -moz-transition: width 0.25s ease;
+    -o-transition: width 0.25s ease;
+    transition: width 0.25s ease;
+}*/
