@@ -1,6 +1,6 @@
-div, span, p, td {
+/*div, span, p, td {
 	font-family: Arial, sans-serif;
-}
+}*/
 #content {
 	width: 1200px;
 }
@@ -67,7 +67,7 @@ div, span, p, td {
 	outline: none;
 	cursor: pointer;
 }
-#legend {
+/*#legend {
 	background-color: white;
 	margin-left: 0;
 	padding: 0;
@@ -79,7 +79,7 @@ div, span, p, td {
 #legend .action {
 	color: black;
 	opacity: 0.5;
-}
+}*/
 #legend ul {
 	padding: 0;
 }
@@ -103,9 +103,11 @@ label.disabled {
 #renderer_form.toggler {
 	display: block;
 	margin: 0;
+
 }
 #renderer_form.toggler input[type=radio]:checked {
-	outline: 2px solid steelblue;
+	outline: 5px solid #00ACED;
+
 }
 #renderer_form.toggler input[type=radio] {
 	-moz-appearance: button;
@@ -120,13 +122,15 @@ label.disabled {
 	padding: 0;
 	width: 39px;
 	padding-top: 27px;
+
 	text-align: center;
 	font-size: 10px;
 	color: #808080;
 	background-repeat: no-repeat;
 	position: relative;
-	margin: 0 7px;
+	margin: 0 0 0 7px;
 	cursor: pointer;
+
 }
 #interpolation_form,
 #offset_form {
