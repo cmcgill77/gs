@@ -11,6 +11,7 @@
     "leaflet.markercluster": "^1.0.0",
     "meteor-node-stubs": "~0.2.0",
     "node-geocoder": "^3.15.1",
+    "rickshaw": "^1.6.0",
     "spacy-nlp": "^1.0.7"
   }
 }
