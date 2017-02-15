@@ -280,6 +280,7 @@ body {
 
   .nav navbar-nav {
     margin-top: 0px;
+
    }
 
 .navbar-brand {
@@ -290,14 +291,29 @@ body {
 
 /* overwrite material design colors */
 
+.nav.navbar-nav.navbar-right li a {
+    color: #A5A5A5;
+}
+
+.nav.navbar-nav li a {
+    color: #A5A5A5;
+}
+
+.nav.navbar-nav li a:hover {
+    color:white;
+}
+
 .navbar-default .navbar-nav > .active{
     color: #000;
    background: #a5a5a5;
  }
 
+
+
 .navbar-default .navbar-nav .dropdown-toggle > .active{
     color: #000;
    background: #a5a5a5;
+
 }
 
  .navbar-default .navbar-nav  > .active > a .dropdown-toggle,
@@ -322,6 +338,7 @@ body {
  }
 
 .navbar-default {
+  color: white;
     background-color: #424242;
     border-radius: 0px 0px 0px 0px;
 

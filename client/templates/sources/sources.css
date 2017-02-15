@@ -1,30 +1,40 @@
 
-#content-container {
+/*#content-container {
   height: calc(100%);
-  overflow-y: hidden;
   padding-left: 20px;
-}
+}*/
 
 #side-nav {
 
-position: relative;
-z-index: 1;
+  position: relative;
+  z-index: 1;
   height:100vh;
-margin-right: -30px;
-  overflow-y: scroll;
-
-
+  overflow: scroll;
 }
 
-#content-wrapper {
+#sources-content {
+  height:100vh;
+  overflow: scroll;
+  
+}
+
+#sources-content::-webkit-scrollbar {
+    display: none;
+}
+
+/*#content-wrapper {
 
 position: relative;
 z-index: 2;
   overflow-y: scroll;
-padding-left: 20px;
+padding-left: 0px;
 background-color: #FFFFFF;
   height: calc(100%);
 
+}*/
+
+#side-nav::-webkit-scrollbar {
+    display: none;
 }
 
 #graph {
@@ -51,5 +61,5 @@ background-color: #FFFFFF;
   display: inline-block;
   margin-top: 6px;
   margin-right: 5px;
-  background-color: #00ACED;
+  background-color: #E8E8E8;
 }

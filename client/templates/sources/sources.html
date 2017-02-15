@@ -9,13 +9,13 @@
         <div class="row">
           <li><button class="list-group-item source-button source col-md-10" style="padding: 0px 0px 0px 0px" type="button" aria-expanded="false">
     <img style="float: left; width: 50px; height: 50px" src="{{sourceType}}"><span class="source-author"> {{author}}</span>
-  <button class="graph-button btn btn-primary col-md-2" type="button"><i class="fa fa-area-chart" aria-hidden="true"></i></button><span class="badge badge-count">{{postCount}}</span></button></li>
+  <button class="graph-button btn btn-default col-md-2" type="button"><i class="fa fa-area-chart" aria-hidden="true"></i></button><span class="badge badge-count">{{postCount}}</span></button></li>
 
       </div>
         {{/each}}
       </ul>
 		</div>
-		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<div id="sources-content" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 			<div class="row {{showGraph}} animate slideInDown">
 
 <!-- rickshaw start -->
@@ -90,7 +90,7 @@
 
       </div>
 
-    
+
       <script>
         jQuery.noConflict();
       </script>
@@ -98,7 +98,7 @@
       <!-- rickshaw stop -->
 
 			</div>
-      <div style="overflow: hidden;">
+      <div>
 			<div class=row id="content-wrapper" style="background-color: #FFFFFF;">
 
           {{#each showSelectedPosts}}
