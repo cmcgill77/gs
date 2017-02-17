@@ -15,7 +15,7 @@
                 <div class="card-content">
                     <span class="card-title">
 
-                      <button type="button" id="show" class="btn btn-link pull-right" aria-label="Left Align" style="color: #424242; font-size: 18px;">
+                      <button type="button" class="show-btn btn btn-link pull-right" data-rel="{{_id}}" aria-label="Left Align" style="color: #424242; font-size: 18px;">
                           <i class="fa fa-ellipsis-v"></i>
                       </button>
                       <h6>
@@ -55,9 +55,10 @@
                     <a style="color: #424242;" href="{{pathFor 'postVerify'}}" class="discuss btn btn-link"><i class="fa fa-check"></i> Verify</a>
                     <a style="color: #424242;" href="#" class="upvote btn btn-link {{upvotedClass}}"><i class="fa fa-flag"></i> Flag</a>
                 </div><!-- card actions -->
-                <div class="card-reveal">
-                    <span class="card-title">Card Title</span> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <div class="card-reveal" data-rel="{{_id}}">
+                    <span class="card-title">Card Title</span> <button type="button" class="close" data-rel="{{_id}}" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    <p>{{body}}</p>
                 </div><!-- card reveal -->
             </div>
         </div>
