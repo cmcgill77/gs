@@ -1,59 +1,68 @@
 <template name="postItem">
 
 
-  <div class="post" {{attributes}}>
 
-    <div class="title-card">
-      <div class="row">
-        <div class="col-md-2">
-          <img class="title-image" src={{image}}>
+
+    <div class="container animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-image" style="background-color: #00ACED;">
+                    <img class="img-responsive" src="{{image}}">
+
+                </div><!-- card image -->
+
+                <div class="card-content">
+                    <span class="card-title">
+
+                      <button type="button" id="show" class="btn btn-link pull-right" aria-label="Left Align" style="color: #424242; font-size: 18px;">
+                          <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                      <h6>
+                      <span class="post-title">
+                        <a data-toggle="tooltip" data-placement="bottom" title="{{body}}" data-original-title="{{body}}" href="{{url}}">{{title}}</a>
+                      </span>
+                      </h6>
+
+                      <h6>
+                        <span>{{domain}} <i class="fa fa-crosshairs {{locationClass}}" aria-hidden="true"></i></span>
+                      </h6>
+
+                      <ul style="font-size: 10px;">
+                      <li>
+                        {{pluralize votes "Vote"}},
+                        submitted by {{author}},
+                        </li>
+                        <li>{{submitted}}</li>
+                        <li>Verified: {{verified}}</li>
+                        <li>Score: {{verificationScore}}</li>
+                      </ul>
+
+                      <h6>
+                      <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
+                    </h6>
+
+
+                    </span>
+
+
+                </div><!-- card content -->
+                <div class="card-action">
+
+
+                    <a style="color: #424242;" href="{{pathFor 'postPage'}}" class="details btn btn-link"><i class="fa fa-asterisk"></i> Details</a>
+                    {{#if ownPost}}<a style="color: #424242;" href="{{pathFor 'postEdit'}}" class="discuss btn btn-link"><i class="fa fa-pencil"></i> Edit</a>{{/if}}
+                    <a style="color: #424242;" href="{{pathFor 'postVerify'}}" class="discuss btn btn-link"><i class="fa fa-check"></i> Verify</a>
+                    <a style="color: #424242;" href="#" class="upvote btn btn-link {{upvotedClass}}"><i class="fa fa-flag"></i> Flag</a>
+                </div><!-- card actions -->
+                <div class="card-reveal">
+                    <span class="card-title">Card Title</span> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                </div><!-- card reveal -->
+            </div>
         </div>
-        <div class="col-md-10">
-       <h6><a data-toggle="tooltip" data-placement="bottom" title="{{body}}" data-original-title="{{body}}" href="{{url}}">{{title}}</a></h6>
-       <span>{{domain}} <i class="fa fa-crosshairs {{locationClass}}" aria-hidden="true"></i></span>
-        </div>
-
-     </div>
-   </div>
-
-  <div class="card-grid">
-  <div class="card-front">
-
-      <ul>
-      <li>
-        {{pluralize votes "Vote"}},
-        submitted by {{author}},
-        </li>
-        <li>{{submitted}}</li>
-        <li>Verified: {{verified}}</li>
-        <li>Score: {{verificationScore}}</li>
-      </ul>
-
-
-        <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
-
-      <a href="#" class="upvote btn btn-default {{upvotedClass}}" style=""><i class="fa fa-thumbs-up"></i></a>
-
-
-
-
-      <a style="color: #424242;" href="{{pathFor 'postPage'}}" class="details btn btn-link"><i class="fa fa-ellipsis-v"></i> Details</a>
-      {{#if ownPost}}<a style="color: #424242;" href="{{pathFor 'postEdit'}}" class="discuss btn btn-link"><i class="fa fa-pencil"></i> Edit</a>{{/if}}
-      <a style="color: #424242;" href="{{pathFor 'postVerify'}}" class="discuss btn btn-link"><i class="fa fa-check"></i> Verify</a>
-
-
-
-
-
     </div>
-    <div class="card-back">
-      <h5>Back of Card</h5>
-      <p>This is the card back.  Additional information goes here.  Source credibility info, report verification info, etc.</p>
-
-
-     </div>
-    </div>
-    </div>
+</div>
 
 
 </template>

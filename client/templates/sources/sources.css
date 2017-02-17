@@ -10,12 +10,13 @@
   z-index: 1;
   height:100vh;
   overflow: scroll;
+  padding-top: 20px;
 }
 
 #sources-content {
   height:100vh;
   overflow: scroll;
-  
+
 }
 
 #sources-content::-webkit-scrollbar {
@@ -62,4 +63,8 @@ background-color: #FFFFFF;
   margin-top: 6px;
   margin-right: 5px;
   background-color: #E8E8E8;
+}
+
+.source:hover {
+  background-color: #EEEEEE;
 }

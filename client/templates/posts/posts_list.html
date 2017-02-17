@@ -1,23 +1,23 @@
 <template name="postsList">
 
-  
+
     <div class="container-fluid">
-      
-  <div class="posts" style="margin: 10px;">
-    
+
+  <div class="row" style="margin: 10px;">
+
     {{#each postsWithRank}}
-      
+
           <div class="col-md-3" style="padding-left: 5px; padding-right: 5px; padding-bottom: 10px;">
-           <div class="post-card">
+
           {{> postItem}}
             </div>
-            </div>
-            
-      
+
+
+
     {{/each}}
-    
+
       </div>
-    
+
     {{#if nextPath}}
       <div class="row">
       <a class="load-more col-md-12" href="{{nextPath}}"><i class="fa fa-chevron-down"></i> Load more</a>
@@ -27,8 +27,8 @@
         {{> spinner}}
       {{/unless}}
     {{/if}}
-  
-  
+
+
   </div>
-  
+
 </template>

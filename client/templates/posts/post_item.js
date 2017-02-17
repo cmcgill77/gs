@@ -3,6 +3,17 @@ var Positions = new Meteor.Collection(null);
 
 Template.postItem.rendered = function () {
 
+   $(function(){
+
+    $('#show').on('click',function(){
+        $('.card-reveal').slideToggle('slow');
+    });
+
+    $('.card-reveal .close').on('click',function(){
+        $('.card-reveal').slideToggle('slow');
+    });
+});
+
   this.$('[data-toggle="tooltip"]').tooltip();
   this.$('[data-toggle="popover"]').popover();
   this.$(".card-grid").flip({
