@@ -347,13 +347,13 @@ Template.sources.helpers({
   'sourceType': function(){
     var typeId = this.type;
     if (typeId === 'RSS') {
-      return "Rss_Icon.png"
+      return "fa-rss"
     }
     else if (typeId === 'twitter') {
-      return "Twitter_icon_blue.png"
+      return "fa-twitter"
     }
     else {
-      return "Instagram_icon_flat.png"
+      return "fa-instagram"
     }
   }
 });
