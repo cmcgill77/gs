@@ -62,10 +62,13 @@ background-color: #FFFFFF;
   display: inline-block;
   margin-top: 6px;
   margin-right: 5px;
-  background-color: #E8E8E8;
+  background-color: #fafafa;
 }
 
 
+.source {
+  cursor: pointer;
+}
 
 .source:hover {
   background-color: #EEEEEE;

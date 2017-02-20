@@ -6,19 +6,20 @@
 		<div id="side-nav" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
       <ul style="padding-left: 20px;">
         {{#each listSources}}
-        <div class="row">
+
+            <div class="row notice source" style="padding-top: 10;">
           <li>
-            <div class="notice source">
+
 
               <img style="float: left; width: 50px; height: 50px;" src="{{image}}">
               <span class="source-author"><strong>{{author}}</strong> <i class="fa {{sourceType}}" aria-hidden="true"></i></span>
-            <button class="graph-button btn btn-link col-md-2"><i class="fa fa-area-chart" aria-hidden="true"></i></button>
-            <span class="badge badge-count">{{postCount}}</span>
-   </div>
+            <button class="graph-button btn btn-link"><i class="fa fa-area-chart" aria-hidden="true"></i></button>
+            <span class="badge badge-count" style="float: right;">{{postCount}}</span>
+
 
 </li>
+ </div>
 
-      </div>
         {{/each}}
       </ul>
 		</div>
