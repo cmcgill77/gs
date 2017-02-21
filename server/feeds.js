@@ -33,7 +33,8 @@ Meteor.methods({
   'addVerificationData': function(verificationData) {
     Posts.update (verificationData.postId, {$set: {
       verified : true,
-      verificationScore : verificationData.verificationScore
+      verificationScore : verificationData.verificationScore,
+      verificationSteps : verificationData.verificationSteps
     }});
   },
 

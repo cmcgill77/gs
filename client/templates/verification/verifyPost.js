@@ -23,6 +23,7 @@ Template.postVerify.rendered = function () {
         rating = (score[0] + score[1] + score[2] + score[3]) * 5;
 
         Session.set('currentRating', rating)
+        Session.set('currentScore', score)
 
         console.log(step);
         console.log(scale);
@@ -215,14 +216,11 @@ Template.postVerify.events({
 
     var verificationData = {
       postId : this._id,
-      verificationScore : Session.get ('currentRating')
-
+      verificationScore : Session.get ('currentRating'),
+      verificationSteps : Session.get ('currentScore')
       }
 
-
-
       Meteor.call('addVerificationData', verificationData);
-
 
     Router.go('home');
 

@@ -316,7 +316,7 @@ Template.sources.helpers({
   },
   'postsBySource': function() {
     return Posts.find({author: this.author});
-  },
+  },  
   'selectedClass': function(){
     var sourceId = this._id;
     var selectedSource = Session.get('selectedSource');
