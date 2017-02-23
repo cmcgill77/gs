@@ -216,8 +216,10 @@ Template.postVerify.events({
 
     var verificationData = {
       postId : this._id,
+      verifiedPostAuthor: this.author,
+      verifiedPostType: this.type,
       verificationScore : Session.get ('currentRating'),
-      verificationSteps : Session.get ('currentScore')
+      verificationSteps : Session.get ('currentScore'),
       }
 
       Meteor.call('addVerificationData', verificationData);

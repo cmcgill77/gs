@@ -62,7 +62,12 @@ background-color: #FFFFFF;
   display: inline-block;
   margin-top: 6px;
   margin-right: 5px;
-  background-color: #fafafa;
+  background-color: transparent;
+  color: #7F7F84;
+}
+
+.graph-button:hover {
+  color: #2196F3;
 }
 
 .source {

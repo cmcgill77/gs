@@ -312,11 +312,11 @@ var RenderControls = function(args) {
 Template.sources.helpers({
   'listSources': function(){
       var currentUserId = Meteor.userId();
-      return Sources.find();
+      return Sources.find({}, {sort: {"levelOfConfidence.locValue": -1, sourcePostCount: -1}})
   },
   'postsBySource': function() {
     return Posts.find({author: this.author});
-  },  
+  },
   'selectedClass': function(){
     var sourceId = this._id;
     var selectedSource = Session.get('selectedSource');
@@ -343,6 +343,65 @@ Template.sources.helpers({
   },
   'sourceID': function () {
     return this.author
+  },
+  'sourceLocColor': function () {
+    if (this.levelOfConfidence.locValue > 0 && this.levelOfConfidence.locValue <= 10) {
+      return 'notice-level-1';
+    }
+    else if (this.levelOfConfidence.locValue > 10 && this.levelOfConfidence.locValue <= 19) {
+      return 'notice-level-2';
+    }
+    else if (this.levelOfConfidence.locValue > 19 && this.levelOfConfidence.locValue <= 29) {
+      return 'notice-level-3';
+    }
+    else if (this.levelOfConfidence.locValue > 29 && this.levelOfConfidence.locValue <= 39) {
+      return 'notice-level-4';
+    }
+    else if (this.levelOfConfidence.locValue > 39 && this.levelOfConfidence.locValue <= 49) {
+      return 'notice-level-5';
+    }
+    else if (this.levelOfConfidence.locValue > 49 && this.levelOfConfidence.locValue <= 59) {
+      return 'notice-level-6';
+    }
+    else if (this.levelOfConfidence.locValue > 59 && this.levelOfConfidence.locValue <= 69) {
+      return 'notice-level-7';
+    }
+    else if (this.levelOfConfidence.locValue > 69 && this.levelOfConfidence.locValue <= 79) {
+      return 'notice-level-8';
+    }
+    else if (this.levelOfConfidence.locValue > 79 && this.levelOfConfidence.locValue <= 89) {
+      return 'notice-level-9';
+    }
+    else if (this.levelOfConfidence.locValue > 89 && this.levelOfConfidence.locValue <= 100) {
+      return 'notice-level-10';
+    }
+    else {
+      return 'notice';
+    }
+    // switch (this.levelOfConfidence.locValue) {
+    //   case > 0 && <= 10:
+    //    return 'notice notice-level-1';
+    //   case > 10 && <= 19:
+    //    return 'notice notice-level-1';
+    //   case > 19 && <= 29:
+    //    return 'notice notice-level-1';
+    //   case > 29 && <= 39:
+    //    return 'notice notice-level-1';
+    //   case > 39 && <= 49:
+    //    return 'notice notice-level-1';
+    //   case > 49 && <= 59:
+    //    return 'notice notice-level-1';
+    //   case > 59 && <= 69:
+    //    return 'notice notice-level-1';
+    //   case > 69 && <= 79:
+    //    return 'notice notice-level-1';
+    //   case > 79 && <= 89:
+    //    return 'notice notice-level-1';
+    //   case > 99 && <= 100:
+    //    return 'notice notice-level-1';
+    //   default:
+    //    return 'notice';
+    // }
   },
   'sourceType': function(){
     var typeId = this.type;

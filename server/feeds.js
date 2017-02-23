@@ -31,11 +31,42 @@ Meteor.methods({
     feedsList.update(selectedFeed, {$inc: {score: scoreValue}});
   },
   'addVerificationData': function(verificationData) {
+//add verification data to post
     Posts.update (verificationData.postId, {$set: {
       verified : true,
       verificationScore : verificationData.verificationScore,
       verificationSteps : verificationData.verificationSteps
     }});
+    //find source of post and insert post score object into verified posts array
+    var owningSource = Sources.find({ $and: [{author: verificationData.verifiedPostAuthor}, {type: verificationData.verifiedPostType}]}).fetch();
+    console.log("============================")
+    console.log(owningSource[0]._id)
+    console.log(verificationData.verificationScore)
+    console.log("============================")
+
+    Sources.update (owningSource[0]._id, { $push: {"levelOfConfidence.verifiedPosts": {postID: verificationData.postId, verificationScore: verificationData.verificationScore}}})
+
+//calculate new level of confidence for source and update loc value
+var verifiedPostsTotal = 0;
+//get updated source info
+owningSource = Sources.find({ $and: [{author: verificationData.verifiedPostAuthor}, {type: verificationData.verifiedPostType}]}).fetch();
+console.log ('source verified posts total: ' + owningSource[0].levelOfConfidence.verifiedPosts.length)
+console.log ('adding verification scores');
+for (i = 0; i < owningSource[0].levelOfConfidence.verifiedPosts.length; i++) {
+
+  console.log (owningSource[0].levelOfConfidence.verifiedPosts[i].verificationScore)
+  verifiedPostsTotal = verifiedPostsTotal + owningSource[0].levelOfConfidence.verifiedPosts[i].verificationScore;
+
+}
+
+var newVerifiedPostsTotal = verifiedPostsTotal
+var newLocValue = newVerifiedPostsTotal / (owningSource[0].levelOfConfidence.verifiedPosts.length)
+console.log('------')
+console.log('total: ' + newVerifiedPostsTotal);
+console.log('loc is ' + newLocValue);
+Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLocValue}});
+
+
   },
 
   'twitterQuery': function(selectedFeed) {
@@ -326,14 +357,7 @@ var postAuthor = Sources.find({author: twitterPost.author}).fetch();
      console.log ('current source post count is ' + postAuthor[0].sourcePostCount);
 
      var newPostCount = postAuthor[0].sourcePostCount + 1;
-     Sources.update(postAuthor[0]._id, {
-       author: twitterPost.author,
-       type: 'twitter',
-       image: twitterPost.image,
-       sourcePostCount: newPostCount,
-       lastPost: twitterPost.submitted,
-       createdBy: currentUserId
-      });
+     Sources.update(postAuthor[0]._id, {$set: {sourcePostCount: newPostCount}});
 
      console.log ('post count by this source has been updated to ' + newPostCount);
    }
@@ -344,7 +368,8 @@ var postAuthor = Sources.find({author: twitterPost.author}).fetch();
        image: twitterPost.image,
        sourcePostCount: 1,
        lastPost: twitterPost.submitted,
-       createdBy: currentUserId
+       createdBy: currentUserId,
+       levelOfConfidence: {locValue: 0, verifiedPosts: []}
      })
      console.log ('new source created');
      newSource = Sources.find({author: twitterPost.author})

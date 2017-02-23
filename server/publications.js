@@ -23,6 +23,7 @@ Meteor.publish('notifications', function() {
 
 Meteor.publish ('theFeeds', function() {
     var currentUserId = this.userId;
+
     return feedsList.find({createdBy: currentUserId});
   });
 
