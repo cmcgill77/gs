@@ -2,10 +2,13 @@
 
 
     <div id="content-container" class="container-fluid">
+
 	<div class="row">
+
 		<div id="side-nav" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+{{> EasySearch.Input index=sourcesIndex}}
       <ul style="padding-left: 20px;">
-        {{#each listSources}}
+        {{#EasySearch.Each index=sourcesIndex}}
 
             <div class="row notice {{sourceLocColor}} source" style="padding-top: 10;">
           <li>
@@ -21,8 +24,13 @@
 </li>
  </div>
 
-        {{/each}}
+        {{/EasySearch.Each}}
       </ul>
+      {{> EasySearch.LoadMore index=sourcesIndex}}
+
+      {{#EasySearch.IfNoResults index=sourcesIndex}}
+        <div class="no-results">No results found!</div>
+      {{/EasySearch.IfNoResults}}
 		</div>
 		<div id="sources-content" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 			<div class="row {{showGraph}} animate slideInDown">
@@ -100,9 +108,7 @@
       </div>
 
 
-      <script>
-        jQuery.noConflict();
-      </script>
+  
 
       <!-- rickshaw stop -->
 

@@ -310,6 +310,8 @@ var RenderControls = function(args) {
 }
 
 Template.sources.helpers({
+  sourcesIndex: () => SourcesIndex,
+
   'listSources': function(){
       var currentUserId = Meteor.userId();
       return Sources.find({}, {sort: {"levelOfConfidence.locValue": -1, sourcePostCount: -1}})
