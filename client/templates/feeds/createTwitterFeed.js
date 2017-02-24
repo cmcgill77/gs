@@ -64,7 +64,7 @@ Template.createTwitterFeed.events({
           locationControls.style.display = 'none';
        else {
          locationControls.style.display = 'block';
-         throwError("Limiting your search by location will exclued ALL tweets which do not explicity contain location information.  For best results use a mix of keyword and location based searches.");
+         throwError("Limiting your search by location will exclue ALL tweets which do not explicity contain location information.  For best results use a mix of keyword only and location based searches.");
        }
 
     if(mapControls.style.display === 'block')

@@ -3,9 +3,12 @@ Meteor.subscribe('postsBySource');
 
 Template.sources.rendered = function () {
 
+//click on search sort type
+$('#loc-sort').trigger('click');
   Session.set('selectedSource', '');
   Session.set('selectedName', '');
   Session.set('graphClicked', false)
+
 
 //extension logic -- this stuff seems to feed the graph new data at a set interval and enable the render controls (area, bar, stack stream, etc)
 
@@ -170,31 +173,31 @@ var RenderControls = function(args) {
       {
         color: palette.color(),
         data: seriesData[0],
-        name: 'Moscow'
+        name: 'TotalTrafficDC'
       }, {
         color: palette.color(),
         data: seriesData[1],
-        name: 'Shanghai'
+        name: 'ggwash'
       }, {
         color: palette.color(),
         data: seriesData[2],
-        name: 'Amsterdam'
+        name: 'myLHBS'
       }, {
         color: palette.color(),
         data: seriesData[3],
-        name: 'Paris'
+        name: 'Arkady_Gluhih '
       }, {
         color: palette.color(),
         data: seriesData[4],
-        name: 'Tokyo'
+        name: 'hawkoviim '
       }, {
         color: palette.color(),
         data: seriesData[5],
-        name: 'London'
+        name: 'stpillow '
       }, {
         color: palette.color(),
         data: seriesData[6],
-        name: 'New York'
+        name: 'Dina_Maron '
       }
     ]
   } );
@@ -310,6 +313,21 @@ var RenderControls = function(args) {
 }
 
 Template.sources.helpers({
+
+  inputAttributes: () => {
+      return {
+        placeholder: 'Search...',
+        type: 'text',
+      }
+    },
+
+    loadMoreAttributes: () => {
+        return {
+          class: 'btn btn-link load-more-button',
+        }
+      },
+  loadMoreIcon: () => '<i class="fa fa-chevron-down" aria-hidden="true"></i>',
+
   sourcesIndex: () => SourcesIndex,
 
   'listSources': function(){
@@ -420,9 +438,12 @@ Template.sources.helpers({
 });
 
 Template.sources.events({
-  'change .sorting': (e) => {
+  'click .sorting': (e) => {
     SourcesIndex.getComponentMethods()
       .addProps('sortBy', $(e.target).val())
+  // 'change .sorting': (e) => {
+  //   SourcesIndex.getComponentMethods()
+  //     .addProps('sortBy', $(e.target).val())
   },
   'click .source': function () {
     var sourceId = this._id;

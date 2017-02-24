@@ -70,6 +70,23 @@ background-color: #FFFFFF;
   color: #2196F3;
 }
 
+.load-more-button {
+  
+  width: 100%;
+
+}
+
+.load-more-button:hover {
+  background-color: #EEEEEE;
+}
+
+
+#source-search {
+  margin-bottom: 20px;
+  margin-top: -10px;
+  margin-left: 10px;
+}
+
 .source {
   cursor: pointer;
 }
