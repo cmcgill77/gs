@@ -420,6 +420,10 @@ Template.sources.helpers({
 });
 
 Template.sources.events({
+  'change .sorting': (e) => {
+    SourcesIndex.getComponentMethods()
+      .addProps('sortBy', $(e.target).val())
+  },
   'click .source': function () {
     var sourceId = this._id;
     var sourceName = this.author;
