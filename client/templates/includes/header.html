@@ -22,25 +22,19 @@
         <ul class="nav navbar-nav">
           {{#if currentUser}}<li class="{{activeRouteClass 'home' 'newPosts'}}"><a href="{{pathFor 'newPosts'}}">
             <span class="postButton" aria-hidden="true"><i class="fa fa-th"></i></span>
-            List by date</a></li>{{/if}}
+            List</a></li>{{/if}}
         </ul>
         <!-- list view button weighted -->
-        <ul class="nav navbar-nav">
+        <!-- <ul class="nav navbar-nav">
           {{#if currentUser}}<li class="{{activeRouteClass 'bestPosts'}}"><a href="{{pathFor 'bestPosts'}}">
           <span class="postButton" aria-hidden="true"><i class="fa fa-th"></i></span>
           List by score</a></li>{{/if}}
-        </ul>
+        </ul> -->
         <!-- new post button -->
         <ul class="nav navbar-nav">
           {{#if currentUser}}<li class="{{activeRouteClass 'postSubmit'}}"><a href="{{pathFor 'postSubmit'}}">
             <span class="postButton" aria-hidden="true"><i class="fa fa-plus-circle"></i></span>
-          New Post</a></li>{{/if}}
-        </ul>
-        <!-- notifications -->
-        <ul class="nav navbar-nav">
-          {{#if currentUser}}<li class="dropdown">
-              {{> notifications}}
-            </li>{{/if}}
+          Add Report</a></li>{{/if}}
         </ul>
         <!-- feeds button -->
         <ul class="nav navbar-nav">
@@ -54,6 +48,19 @@
             <span class="postButton" aria-hidden="true"><i class="fa fa-address-book" aria-hidden="true"></i></span>
           Sources</a></li>{{/if}}
         </ul>
+        <!-- notifications -->
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}<li class="dropdown">
+              {{> decks_menu}}
+            </li>{{/if}}
+        </ul>
+        <!-- notifications -->
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}<li class="dropdown">
+              {{> notifications}}
+            </li>{{/if}}
+        </ul>
+
 
         <!-- login widget -->
         <ul class="nav navbar-nav navbar-right">

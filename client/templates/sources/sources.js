@@ -337,18 +337,19 @@ Template.sources.helpers({
   'postsBySource': function() {
     return Posts.find({author: this.author});
   },
-  'selectedClass': function(){
-    var sourceId = this._id;
-    var selectedSource = Session.get('selectedSource');
-    if (sourceId === selectedSource) {
-      return "selected"
-    }
+
+    'showSelectedSource': function () {
+      var currentUserId = Meteor.userId();
+      var selectedSource = Session.get('selectedSource');
+
+      return Sources.findOne({_id: selectedSource});
     },
   'showSelectedPosts': function () {
     var currentUserId = Meteor.userId();
     var selectedSource = Session.get('selectedSource');
     var selectedName = Session.get('selectedName');
-    return Posts.find({author: selectedName});
+    var selectedType = Session.get('selectedType');
+    return Posts.find({author: selectedName, type: selectedType});
   },
   'postCount': function() {
     return Posts.find({author: this.author}).count();
@@ -446,11 +447,17 @@ Template.sources.events({
   //     .addProps('sortBy', $(e.target).val())
   },
   'click .source': function () {
-    var sourceId = this._id;
+    var sourceId = this.__originalId;
     var sourceName = this.author;
+    var sourceType = this.type;
+    console.log('click');
+    console.log(sourceName);
     console.log(sourceId);
+    console.log(sourceType);
+
     Session.set('selectedSource', sourceId);
-    Session.set('selectedName', sourceName)
+    Session.set('selectedName', sourceName);
+    Session.set('selectedType', sourceType);
   },
   'click .graph-button': function () {
     //var graphClicked = True;

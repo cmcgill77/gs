@@ -123,15 +123,22 @@
 
 			</div>
       <div>
+
+        <p>Source: {{showSelectedSource.author}}</p>
+
 			<div class=row id="content-wrapper" style="background-color: #FFFFFF;">
 
           {{#each showSelectedPosts}}
+
           <div class="col-md-4 blockquote animated fadeIn" style="padding-left: 5px; padding-right: 5px; padding-bottom: 5px; padding-top: 5px;">
            <div>
           {{> postItem}}
             </div>
             </div>
+
         {{/each}}
+
+
 
 			</div>
     </div>

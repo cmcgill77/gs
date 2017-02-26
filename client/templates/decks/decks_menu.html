@@ -1,0 +1,33 @@
+<template name="decks_menu">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+   <span class="postButton"><i class="fa fa-window-restore" aria-hidden="true"></i></span> Decks
+
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <a href="#">
+        <strong><i class="fa fa-plus" aria-hidden="true"></i> Create Deck</strong>
+      </a>
+    </li>
+    <li role="separator" class="divider"></li>
+
+        {{> decksItem}}
+
+
+
+  </ul>
+</template>
+
+<template name="decksItem">
+  <li>
+    <a href="{{pathFor 'deck'}}">
+      Deck 1
+    </a>
+  </li>
+  <li>
+    <a href="{{pathFor 'deck'}}">
+      Deck 2
+    </a>
+  </li>
+</template>

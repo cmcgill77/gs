@@ -24,13 +24,13 @@
     transition: all 0.4s ease;
 }
 
-.card .card-image:hover img{
+/*.card .card-image:hover img{
     -webkit-transform: scale(1.2) rotate(-7deg);
     -moz-transform: scale(1.2) rotate(-7deg);
     -ms-transform: scale(1.2) rotate(-7deg);
     -o-transform: scale(1.2) rotate(-7deg);
     transform: scale(1.2) rotate(-7deg);
-}
+}*/
 
 .card{
     font-family: 'Roboto', sans-serif;
