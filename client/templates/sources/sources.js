@@ -335,7 +335,7 @@ Template.sources.helpers({
       return Sources.find({}, {sort: {"levelOfConfidence.locValue": -1, sourcePostCount: -1}})
   },
   'postsBySource': function() {
-    return Posts.find({author: this.author});
+    return Posts.find({author: this.author}, {sort: {submitted: -1}});
   },
 
     'showSelectedSource': function () {
@@ -349,7 +349,7 @@ Template.sources.helpers({
     var selectedSource = Session.get('selectedSource');
     var selectedName = Session.get('selectedName');
     var selectedType = Session.get('selectedType');
-    return Posts.find({author: selectedName, type: selectedType});
+    return Posts.find({author: selectedName, type: selectedType}, {sort: {submitted: -1}});
   },
   'postCount': function() {
     return Posts.find({author: this.author}).count();
@@ -399,37 +399,63 @@ Template.sources.helpers({
     else {
       return 'notice';
     }
-    // switch (this.levelOfConfidence.locValue) {
-    //   case > 0 && <= 10:
-    //    return 'notice notice-level-1';
-    //   case > 10 && <= 19:
-    //    return 'notice notice-level-1';
-    //   case > 19 && <= 29:
-    //    return 'notice notice-level-1';
-    //   case > 29 && <= 39:
-    //    return 'notice notice-level-1';
-    //   case > 39 && <= 49:
-    //    return 'notice notice-level-1';
-    //   case > 49 && <= 59:
-    //    return 'notice notice-level-1';
-    //   case > 59 && <= 69:
-    //    return 'notice notice-level-1';
-    //   case > 69 && <= 79:
-    //    return 'notice notice-level-1';
-    //   case > 79 && <= 89:
-    //    return 'notice notice-level-1';
-    //   case > 99 && <= 100:
-    //    return 'notice notice-level-1';
-    //   default:
-    //    return 'notice';
-    // }
+  },
+  'postVerColor': function () {
+    if (this.verificationScore > 0 && this.verificationScore <= 10) {
+      return 'verification-source-1';
+    }
+    else if (this.verificationScore > 10 && this.verificationScore <= 19) {
+      return 'verification-source-2';
+    }
+    else if (this.verificationScore > 19 && this.verificationScore <= 29) {
+      return 'verification-source-3';
+    }
+    else if (this.verificationScore > 29 && this.verificationScore <= 39) {
+      return 'verification-source-4';
+    }
+    else if (this.verificationScore > 39 && this.verificationScore <= 49) {
+      return 'verification-source-5';
+    }
+    else if (this.verificationScore > 49 && this.verificationScore <= 59) {
+      return 'verification-source-6';
+    }
+    else if (this.verificationScore > 59 && this.verificationScore <= 69) {
+      return 'verification-source-7';
+    }
+    else if (this.verificationScore > 69 && this.verificationScore <= 79) {
+      return 'verification-source-8';
+    }
+    else if (this.verificationScore > 79 && this.verificationScore <= 89) {
+      return 'verification-source-9';
+    }
+    else if (this.verificationScore > 89 && this.verificationScore <= 100) {
+      return 'verification-source-10';
+    }
+    else {
+      return 'unverified-source';
+    }
   },
   'sourceType': function(){
     var typeId = this.type;
+    //console.log('typeId')
     if (typeId === 'RSS') {
       return "fa-rss"
     }
     else if (typeId === 'twitter') {
+      return "fa-twitter"
+    }
+    else {
+      return "fa-instagram"
+    }
+  },
+  'getSourceType': function(){
+    //var userIcon = this.type;
+    var userIcon = Session.get('selectedType');
+    console.log('typeId')
+    if (userIcon === 'RSS') {
+      return "fa-rss"
+    }
+    else if (userIcon === 'twitter') {
       return "fa-twitter"
     }
     else {

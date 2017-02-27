@@ -123,8 +123,19 @@
 
 			</div>
       <div>
+{{#if showSelectedSource}}
+        <h5>{{showSelectedSource.author}} <i class="fa {{getSourceType}}" aria-hidden="true"></i></h5>
+        <p>Level of Confidence <strong>{{showSelectedSource.levelOfConfidence.locValue}}%</strong></p>
 
-        <p>Source: {{showSelectedSource.author}}</p>
+        <div class="source-container" style="background: #7f7f84; display: inline-block;">
+          {{#each showSelectedPosts}}
+            <div class="verification-source {{postVerColor}}"></div>
+
+
+                {{/each}}
+
+            </div>
+            {{/if}}
 
 			<div class=row id="content-wrapper" style="background-color: #FFFFFF;">
 

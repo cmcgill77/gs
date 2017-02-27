@@ -105,3 +105,69 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.verification-level-1 {
+    border-left: 6px solid #F29A7C;
+}
+.verification-level-1>strong {
+    color: #F29A7C;
+}
+.verification-level-2 {
+    border-left: 6px solid #F0AD81;
+}
+.verification-level-2>strong {
+    color: #F0AD81;
+}.verification-level-3 {
+    border-left: 6px solid #EFBB86;
+}
+.verification-level-3>strong {
+    color: #EFBB86;
+}.verification-level-4 {
+    border-left: 6px solid #EEC987;
+}
+.verification-level-4>strong {
+    color: #EEC987;
+}.verification-level-5 {
+    border-left: 6px solid #EDD689;
+}
+.verification-level-5>strong {
+    color: #EDD689;
+}.verification-level-6 {
+    border-left: 6px solid #E9DC89;
+}
+.verification-level-6>strong {
+    color: #E9DC89;
+}.verification-level-7 {
+    border-left: 6px solid #E3E08C;
+}
+.verification-level-7>strong {
+    color: #E3E08C;
+}.verification-level-8 {
+    border-left: 6px solid #CAD695;
+}
+.verification-level-8>strong {
+    color: #CAD695;
+}.verification-level-9 {
+    border-left: 6px solid #ACCD94;
+}
+.verification-level-9>strong {
+    color: #ACCD94;
+}.verification-level-10 {
+    border-left: 6px solid #82CA99;
+}
+.verification-level-10>strong {
+    color: #82CA99;
+}
+
+.unverified {
+  border-left: 6px solid #7f7f84;
+}
+
+.unverified>strong {
+  color: #7f7f84;
+}
+
+
+/*.card {
+  border-left: 6px solid #7f7f84;
+}*/

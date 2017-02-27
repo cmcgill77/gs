@@ -3,10 +3,22 @@
     <div class="container animated fadeIn">
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-image" style="background-color: #00ACED;">
-                    <img class="img-responsive" src="{{image}}">
+            <div class="card {{verificationColor}}">
+                <div class="card-image">
+                  <div class="col-md-2">
+                    <img class="img-responsive" src="{{image}}" style="margin-top: 10px;">
+                  </div>
+                  <div class="col-md-10">
+                    <h6>
+                    <span class="post-title">
+                      <a data-toggle="tooltip" data-placement="bottom" title="{{body}}" data-original-title="{{body}}" href="{{url}}">{{title}}</a>
+                    </span>
+                    </h6>
 
+                    <h6>
+                      <span>{{domain}} <i class="fa fa-crosshairs {{locationClass}}" aria-hidden="true"></i></span>
+                    </h6>
+                  </div>
                 </div><!-- card image -->
 
                 <div class="card-content">
@@ -15,25 +27,15 @@
                       <button type="button" class="show-btn btn btn-link pull-right" data-rel="{{_id}}" aria-label="Left Align" style="color: #424242; font-size: 18px;">
                           <i class="fa fa-ellipsis-v"></i>
                       </button>
-                      <h6>
-                      <span class="post-title">
-                        <a data-toggle="tooltip" data-placement="bottom" title="{{body}}" data-original-title="{{body}}" href="{{url}}">{{title}}</a>
-                      </span>
-                      </h6>
 
-                      <h6>
-                        <span>{{domain}} <i class="fa fa-crosshairs {{locationClass}}" aria-hidden="true"></i></span>
-                      </h6>
 
-                      <ul style="font-size: 10px;">
+                      <ul style="font-size: 12px;">
                       <li>
                         {{pluralize votes "Vote"}},
                         submitted by {{author}},
                         </li>
                         <li>{{submitted}}</li>
-                        <li>Verified: {{verified}}</li>
-                        <li>Score: {{verificationScore}}</li>
-                        <li>Steps: {{verificationSteps}}</li>
+
                       </ul>
 
                       <h6>

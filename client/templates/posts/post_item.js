@@ -20,6 +20,41 @@ Template.postItem.rendered = function () {
 
 
 Template.postItem.helpers({
+  'verificationColor': function () {
+    if (this.verificationScore > 0 && this.verificationScore <= 10) {
+      return 'verification-level-1';
+    }
+    else if (this.verificationScore > 10 && this.verificationScore <= 19) {
+      return 'verification-level-2';
+    }
+    else if (this.verificationScore > 19 && this.verificationScore <= 29) {
+      return 'verification-level-3';
+    }
+    else if (this.verificationScore > 29 && this.verificationScore <= 39) {
+      return 'verification-level-4';
+    }
+    else if (this.verificationScore > 39 && this.verificationScore <= 49) {
+      return 'verification-level-5';
+    }
+    else if (this.verificationScore > 49 && this.verificationScore <= 59) {
+      return 'verification-level-6';
+    }
+    else if (this.verificationScore > 59 && this.verificationScore <= 69) {
+      return 'verification-level-7';
+    }
+    else if (this.verificationScore > 69 && this.verificationScore <= 79) {
+      return 'verification-level-8';
+    }
+    else if (this.verificationScore > 79 && this.verificationScore <= 89) {
+      return 'verification-level-9';
+    }
+    else if (this.verificationScore > 89 && this.verificationScore <= 100) {
+      return 'verification-level-10';
+    }
+    else {
+      return 'unverified';
+    }
+  },
   locationClass: function() {
     if (this.geolocationType === 'device') {
     return 'green'

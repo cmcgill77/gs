@@ -71,7 +71,7 @@ background-color: #FFFFFF;
 }
 
 .load-more-button {
-  
+
   width: 100%;
 
 }
@@ -106,3 +106,70 @@ background-color: #FFFFFF;
 .fa-instagram {
   color: #895A4D;
 }
+
+.verification-source {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-left: 0px;
+  border-right: 0px;
+
+}
+
+.verification-container {
+  font-size: 0;
+}
+.verification-container div {
+  display: inline-block; width: 100px; height: 30px; font-size: 12px;
+}
+
+.verification-source-1 {
+    background-color: #F29A7C;
+}
+
+.verification-source-2 {
+    background-color: #F0AD81;
+}
+
+.verification-source-3 {
+    background-color: #EFBB86;
+}
+
+.verification-source-4 {
+    background-color: #EEC987;
+}
+
+.verification-source-5 {
+    background-color: #EDD689;
+}
+
+.verification-source-6 {
+    background-color: #E9DC89;
+}
+
+.verification-source-7 {
+    background-color: #E3E08C;
+}
+
+.verification-source-8 {
+    background-color: #CAD695;
+}
+
+.verification-source-9 {
+    background-color: #ACCD94;
+}
+
+.verification-source-10 {
+    background-color: #82CA99;
+}
+
+.unverified-source {
+  background-color: #7f7f84;
+}
+
+.source-container { font-size: 0; }
+.source-container div { display: inline-block; font-size: 12; }
