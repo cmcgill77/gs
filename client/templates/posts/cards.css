@@ -32,6 +32,8 @@
     transform: scale(1.2) rotate(-7deg);
 }*/
 
+
+
 .card{
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
@@ -96,6 +98,14 @@
 
 .card-action a.discuss.btn.btn-link{
   margin: 0px;
+}
+
+.card-author {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  
 }
 
 .post-title {

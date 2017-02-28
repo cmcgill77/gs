@@ -20,6 +20,19 @@ Template.postItem.rendered = function () {
 
 
 Template.postItem.helpers({
+  'sourceType': function(){
+    var typeId = this.type;
+    //console.log('typeId')
+    if (typeId === 'RSS') {
+      return "fa-rss"
+    }
+    else if (typeId === 'twitter') {
+      return "fa-twitter"
+    }
+    else {
+      return "fa-instagram"
+    }
+  },
   'verificationColor': function () {
     if (this.verificationScore > 0 && this.verificationScore <= 10) {
       return 'verification-level-1';
