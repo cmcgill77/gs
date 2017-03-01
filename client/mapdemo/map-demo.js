@@ -1,6 +1,9 @@
 if (Meteor.isClient) {
   Meteor.startup(function() {
-    GoogleMaps.load();
+    GoogleMaps.load( {
+        v: '3', key: 'AIzaSyCVE8R3AYOX8X-CD3zJ_uO0a5lmzrTdgPg'
+      }
+    );
   });
 
   Template.body.helpers({
