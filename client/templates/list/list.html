@@ -1,44 +1,28 @@
 <template name="list">
-
-
     <div class="container-fluid">
-
-  <div class="row" style="margin: 10px;">
-
-    <div id="source-search">
-      <i class="fa fa-search" aria-hidden="true"></i>
-    {{> EasySearch.Input index=listIndex}}
-    <button id="newest-sort" type="button" value="newest" class="btn btn-link sorting"><i class="fa fa-clock-o" aria-hidden="true"></i> Recent</button>
-    <button type="button" value="verificationScore" class="btn btn-link sorting"><i class="fa fa-star" aria-hidden="true"></i> Score</button>
-
-    </div>
-
-    {{#EasySearch.Each index=listIndex attributes=inputAttributes}}
-
-          <div class="col-md-3" style="padding-left: 5px; padding-right: 5px; padding-bottom: 10px;">
-
-          {{> postItem}}
+        <div class="row" style="margin: 10px;">
+            <div id="source-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                {{> EasySearch.Input index=listIndex}}
+                <button id="newest-sort" type="button" value="newest" class="btn btn-link sorting">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    Recent</button>
+                <button type="button" value="verificationScore" class="btn btn-link sorting">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    Score</button>
             </div>
-
-
-
-
-{{/EasySearch.Each}}
-{{> EasySearch.LoadMore index=listIndex attributes=loadMoreAttributes content="Load more"}}
-
-{{#EasySearch.IfNoResults index=listIndex}}
-<div class="notice notice-danger">
-<strong>No</strong> results found!
-</div>
-{{/EasySearch.IfNoResults}}
-
-
-</div>
-</div>
-
-
-
-
-
-
+            {{#EasySearch.Each index=listIndex attributes=inputAttributes}}
+                <div class="col-md-3" style="padding-left: 5px; padding-right: 5px; padding-bottom: 10px;">
+                    {{> post_card}}
+                </div>
+            {{/EasySearch.Each}}
+            {{> EasySearch.LoadMore index=listIndex attributes=loadMoreAttributes content="Load more"}}
+            {{#EasySearch.IfNoResults index=listIndex}}
+                <div class="notice notice-danger">
+                    <strong>No</strong>
+                    results found!
+                </div>
+            {{/EasySearch.IfNoResults}}
+        </div>
+    </div>
 </template>

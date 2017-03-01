@@ -1,0 +1,42 @@
+<template name="cardEdit">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+  <form class="main form">
+    <fieldset>
+      <legend>Edit Report</legend>
+    <div class="form-group {{errorClass 'url'}}">
+      <label class="control-label col-lg-2" for="url"><b>URL</b></label>
+      <div class="controls col-lg-10">
+          <input name="url" id="url" type="text" value="{{url}}" placeholder="Your URL" class="form-control"/>
+          <span class="help-block">{{errorMessage 'url'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'title'}}">
+      <label class="control-label col-lg-2" for="title"><b>Title</b></label>
+      <div class="controls col-lg-10">
+          <input name="title" id="title" type="text" value="{{title}}" placeholder="Name your reprt" class="form-control"/>
+          <span class="help-block">{{errorMessage 'title'}}</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-lg-2" for="body"><b>Body</b></label>
+      <div class="controls col-lg-10">
+          <textarea name="body" id="body" type="text" value="{{body}}" placeholder="Report summary" class="form-control" rows="3"></textarea>
+          <span class="help-block"></span>
+      </div>
+    </div>
+
+      <div class="col-lg-10 col-lg-offset-9">
+        <input type="submit" value="Submit" class="btn btn-primary submit"/>
+
+        <a class="btn btn-danger delete" href="#">Delete post</a>
+      </div>
+
+
+    </fieldset>
+  </form>
+  </div>
+  </div>
+  </div>
+</template>

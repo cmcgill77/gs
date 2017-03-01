@@ -1,0 +1,292 @@
+<template name="postListVerify">
+  <div class="col-md-10 col-md-offset-1">
+  <div class="container">
+	<div class="row">
+		<section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Identify Source">
+                            <span class="round-tab">
+                                <i class="fa fa-newspaper-o"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Evaluate Source">
+                            <span class="round-tab">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Verify Date & Location">
+                            <span class="round-tab">
+                                <i class="fa fa-map-marker"></i>
+                            </span>
+                        </a>
+                    </li>
+                  <li role="presentation" class="disabled">
+                        <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Evaluate Content">
+                            <span class="round-tab">
+                                <i class="fa fa-book"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="fa fa-check"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form role="form">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                        <h3 style="display:inline-block;">Identify Source</h3>
+                        <i class="fa fa-question-circle" id="verify-help-icon1"></i>
+                        <div id="help-text1">
+                          <h5><b>How to Identify the Original Source of Online Content</b></h5>
+                          <h6><strong>1. Images</strong></h6>
+
+<p>The obvious — and usually most effective — way of doing this is to contact the uploader and ask him directly if he is indeed the person who took the image.</p>
+
+<p>Reaching out to the uploader via the social network account or email address the image was shared from is a first step, but it’s also important to try to ascertain as much about the uploader’s identity as possible. These details can help in determining whether he is in fact the original source of the image.</p>
+
+<p>In many instances, people may try to be helpful by reposting images they have seen elsewhere. This happens frequently to news organizations — images are sent in by well-meaning members of the public to help report a story. Just by asking the sender to confirm if it’s his image or not can save a lot of time in the verification process.</p>
+
+<p>While tracking down the source of an image begins with the person who uploaded it, it often ends with a different person -- the one who actually captured the image.</p>
+
+<p>Another important step is to use a service like <a href="http://www.google.com/imghp">Google Reverse Image Search</a> or <a href="http://www.tineye.com/">TinEye</a>. Paste the image URL or a copy of the image into either and they will scan the web to see if there are any matches. If several links to the same image pop up, click on “view other sizes” to investigate further.</p>
+
+<p>Usually, the image with the highest resolution/size should take you to the original source. (On Google Images, the resolution for each image result is listed just next to the image itself.) You can then check it against the image you have and see if the source appears authentic.</p>
+
+<p>Quite often on a breaking news event, there will be no images of specific people that you want to illustrate the story with (particularly if they involve ordinary members of the public). Alternatively, you might want to confirm that an image you have of someone is actually them and not someone else with the same name.</p>
+
+<p>Pipl.com is a helpful resource as it allows you to cross-reference names, usernames, email address and phone numbers against online profiles of people. For international searches, WebMii is an additional resource that can help. LinkedIn is also proving to be a great way of verifying individuals and often provides additional leads for being able to track them down (through companies/organizations they are currently or previously associated with).</p>
+
+
+                        </div>
+                        <p>{{postType}}</p>
+                        <p>Based on the steps taken to find the original source of this content, how confident are you that this is the original source?</p>
+                        <div class="scale scale-1" id="step-1-scale-1"> 1
+                        </div>
+                        <div class="scale scale-3" id="step-1-scale-3"> 2
+                        </div>
+                        <div class="scale scale-5" id="step-1-scale-5"> 3
+                        </div>
+
+                        <div class="scale-help" id="step-1-scale-1-help">
+                          <p>Low confidence.  Was not able to contact author or locate original source.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-1-scale-3-help">
+                          <p>Moderate confidence.  Indicators that this is the original source but was unable to verify through contact.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-1-scale-5-help">
+                          <p>High confidence.  Indicators that this is the original source, verified through contact.</p>
+                        </div>
+
+                      <div class="form-group">
+                        <label class="control-label" for="step1Comments"><b>Comments</b></label>
+                        <input type="text" rows="3" class="form-control" id="step1Comments">
+                      </div>
+
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+
+                      <h3 style="display:inline-block;">Evaluate Source</h3>
+                        <i class="fa fa-question-circle" id="verify-help-icon2"></i>
+                        <div id="help-text2">
+                          <h6><b>How to Evaluate the Reliability of a Source</b></h6>
+                          <p>Evaluating reliability of of a source of online content.</p>
+                        </div>
+                        <p>Based on the steps taken to evaluate the reliability of the source of this content, how confident are you that this source is reliable?</p>
+                        <div class="scale scale-1" id="step-2-scale-1"> 1
+                        </div>
+                        <div class="scale scale-2" id="step-2-scale-2"> 2
+                        </div>
+                        <div class="scale scale-3" id="step-2-scale-3"> 3
+                        </div>
+                        <div class="scale scale-4" id="step-2-scale-4"> 4
+                        </div>
+                        <div class="scale scale-5" id="step-2-scale-5"> 5
+                        </div>
+
+                        <div class="scale-help" id="step-2-scale-1-help">
+                          <p>Low confidence.  Was not able determine source's reliability.</p>
+                        </div>
+
+                      <div class="scale-help" id="step-2-scale-2-help">
+                          <p>Low to moderate.  The source's access to information appears credible, but was unable to verify through contact.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-2-scale-3-help">
+                          <p>Moderate confidence.  Source's access to information appears credible and was verified through contact.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-2-scale-4-help">
+                          <p>Moderate to high confidence.  The source's access to information appears credible.  Was unable to verify through contact, but source has reported reliably in the past.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-2-scale-5-help">
+                          <p>High confidence.  The source's access to information appears credible and has been verified through contact.  Source has reported reliably in the past.</p>
+                        </div>
+
+                      <div class="form-group">
+                        <label class="control-label" for="step2Comments"><b>Comments</b></label>
+                        <input type="text" rows="3" class="form-control" id="step2Comments">
+                      </div>
+
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+
+                      <h3 style="display:inline-block;">Verify Date and Location</h3>
+                        <i class="fa fa-question-circle" id="verify-help-icon3"></i>
+                        <div id="help-text3">
+                          <h6><b>Determining Date and Location of Online Content</b></h6>
+                          <p>How to verify the date and location of online content.</p>
+                        </div>
+                        <p class="panorama">
+                        <img class="panorama-image" src={{locationInfo1.view1}}>
+                        <img class="panorama-image" src={{locationInfo1.view2}}>
+                        <img class="panorama-image" src={{locationInfo1.view3}}>
+                        <img class="panorama-image" src={{locationInfo1.view4}}>
+                        </p>
+
+                        <p>Based on the steps taken to verify the date and location of this content, how confident are you that the listed information is accurate?</p>
+
+                        <div class="scale scale-1" id="step-3-scale-1"> 1
+                        </div>
+                        <div class="scale scale-2" id="step-3-scale-2"> 2
+                        </div>
+                        <div class="scale scale-3" id="step-3-scale-3"> 3
+                        </div>
+                        <div class="scale scale-4" id="step-3-scale-4"> 4
+                        </div>
+                        <div class="scale scale-5" id="step-3-scale-5"> 5
+                        </div>
+
+                        <div class="scale-help" id="step-3-scale-1-help">
+                          <p>Low confidence.  Was not able determine accuracy of either date or location, or negative indicators found.</p>
+                        </div>
+
+                      <div class="scale-help" id="step-3-scale-2-help">
+                          <p>Low to moderate.  Some positive and negative indicators but could not verify through contact.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-3-scale-3-help">
+                          <p>Moderate confidence.  Strong positive indicators, but could not verify through contact</p>
+                        </div>
+
+                        <div class="scale-help" id="step-3-scale-4-help">
+                          <p>Moderate to high confidence.  Strong positive indicators, could not verify through contact, but source has reported reliably in the past.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-3-scale-5-help">
+                          <p>High confidence.  Strong positive indicators verified through contact.</p>
+                        </div>
+
+                      <div class="form-group">
+                        <label class="control-label" for="step3Comments"><b>Comments</b></label>
+                        <input type="text" rows="3" class="form-control" id="step3Comments">
+                      </div>
+
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane" role="tabpanel" id="step4">
+
+                         <h3 style="display:inline-block;">Evaluate Content</h3>
+                        <i class="fa fa-question-circle" id="verify-help-icon4"></i>
+                        <div id="help-text4">
+                          <h6><b>Evaluating Accuracy of Online Content</b></h6>
+                          <p>How evaluate overall accuracy of online content once all verification steps have been completed.</p>
+                        </div>
+                        <p>Based on all previous verification steps, what is your assessment of the overall accuracy of the content?</p>
+                        <div class="scale scale-1" id="step-4-scale-1"> 1
+                        </div>
+                        <div class="scale scale-2" id="step-4-scale-2"> 2
+                        </div>
+                        <div class="scale scale-3" id="step-4-scale-3"> 3
+                        </div>
+                        <div class="scale scale-4" id="step-4-scale-4"> 4
+                        </div>
+                        <div class="scale scale-5" id="step-4-scale-5"> 5
+                        </div>
+
+                        <div class="scale-help" id="step-4-scale-1-help">
+                          <p>Low confidence.</p>
+                        </div>
+
+                      <div class="scale-help" id="step-4-scale-2-help">
+                          <p>Low to moderate confidence.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-4-scale-3-help">
+                          <p>Moderate confidence.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-4-scale-4-help">
+                          <p>Moderate to high confidence.</p>
+                        </div>
+
+                        <div class="scale-help" id="step-4-scale-5-help">
+                          <p>High confidence.</p>
+                        </div>
+
+                      <div class="form-group">
+                        <label class="control-label" for="step4Comments"><b>Comments</b></label>
+                        <input type="text" rows="3" class="form-control" id="step4Comments">
+                      </div>
+
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <h3>Complete</h3>
+                        <p>You have successfully completed all verification steps.</p>
+                        <p>{{postBody}}</p>
+                        <p>{{postRating}}</p>
+
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+
+                            <li><button id="verificationSubmit" type="submit" class="btn btn-primary btn-info-full next-step">Submit</button></li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+</div>
+</div>
+</template>

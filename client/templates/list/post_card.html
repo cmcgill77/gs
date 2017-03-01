@@ -1,0 +1,80 @@
+<template name="post_card">
+
+    <div class="container animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card {{verificationColor}}">
+                <div class="card-image" style="background-color: #f7f7f7">
+                  <div class="col-md-2" style="padding-left: 10px;">
+                    <img class="img-responsive" src="{{image}}" style="margin-top: 5px; margin-left: -5; margin-bottom: 5px;">
+                  </div>
+                  <div class="col-md-9" style="padding-left: 0px; padding-top: 5px;">
+
+                      <div class="card-author"><strong>{{author}}</strong> <i class="fa {{sourceType}}" aria-hidden="true"></i></div>
+
+
+                    </div>
+                      <div class="col-md-1">
+                      <button type="button" class="show-btn btn btn-link pull-right" data-rel="{{__originalId}}" aria-label="Left Align" style="display: inline-block; float: right; color: #424242; font-size: 18px;">
+                          <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                   </div>
+
+                </div><!-- card image -->
+
+
+                <div class="card-content">
+
+                    <span class="card-title">
+
+
+
+                      <h6>
+                      <span>
+                        <i class="fa fa-quote-left" aria-hidden="true" style="font-size: 8px; vertical-align: 5px;"></i>
+                        <a data-toggle="tooltip" data-placement="bottom" title="{{body}}" data-original-title="{{body}}" href="{{url}}">{{title}}</a>
+                        <i class="fa fa-quote-right" aria-hidden="true" style="font-size: 8px; vertical-align: 5px;"></i>
+                      </span>
+                      </h6>
+
+
+                      <ul style="font-size: 12px;">
+                      <li>
+
+                        <!-- {{pluralize votes "Vote"}}, -->
+
+                        </li>
+                        <li>{{submitted}}</li>
+                        <li>{{domain}} <i class="fa fa-crosshairs {{locationClass}}" aria-hidden="true"></i></li>
+
+                      </ul>
+
+                      <h6>
+                      <a href="{{pathFor 'cardDetails'}}">{{pluralize commentsCount "comment"}}</a>
+                    </h6>
+
+
+                    </span>
+
+
+                </div><!-- card content -->
+                <div class="card-action">
+
+
+                    <a style="color: #424242;" href="{{pathFor 'cardDetails'}}" class="details btn btn-link"><i class="fa fa-asterisk"></i> Details</a>
+                    {{#if ownPost}}<a style="color: #424242;" href="{{pathFor 'cardEdit'}}" class="discuss btn btn-link"><i class="fa fa-pencil"></i> Edit</a>{{/if}}
+                    <a style="color: #424242;" href="{{pathFor 'postListVerify'}}" class="discuss btn btn-link"><i class="fa fa-check"></i> Verify</a>
+                    <a style="color: #424242;" href="#" class="upvote btn btn-link {{upvotedClass}}"><i class="fa fa-flag"></i> Flag</a>
+                </div><!-- card actions -->
+                <div class="card-reveal" data-rel="{{__originalId}}">
+                    <span class="card-title">Card Title</span> <button type="button" class="close" data-rel="{{__originalId}}" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+
+                    <p>{{body}}</p>
+                </div><!-- card reveal -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</template>
