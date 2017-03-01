@@ -35,3 +35,9 @@ Meteor.publish ('sources', function() {
 Meteor.publish('postsBySource', function(author){
   return Posts.find();
 });
+
+Meteor.publish ('postList', function() {
+    var currentUserId = this.userId;
+
+    return Posts.find();
+  });
