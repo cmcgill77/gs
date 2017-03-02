@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{pathFor 'home'}}"><img src="osint_logo_new.png"></a>
+        <a class="navbar-brand" href="{{pathFor 'list'}}"><img src="osint_logo_new.png"></a>
       </div>
       <div class="collapse navbar-collapse" id="navigation">
         <!-- if user is logged in display map button -->
@@ -20,7 +20,7 @@
         </ul>
         <!-- list view button chronological -->
         <ul class="nav navbar-nav">
-          {{#if currentUser}}<li class="{{activeRouteClass 'home' 'newPosts'}}"><a href="{{pathFor 'newPosts'}}">
+          {{#if currentUser}}<li class="{{activeRouteClass 'list'}}"><a href="{{pathFor 'list'}}">
             <span class="postButton" aria-hidden="true"><i class="fa fa-th"></i></span>
             List</a></li>{{/if}}
         </ul>

@@ -1,11 +1,19 @@
 <template name="cardDetails">
-  {{tags}}
+
   <div class="panel panel-default">
   <div class="panel-body">
     {{body}}
     location: {{location}}
     coordinates: {{latitude}}, {{longitude}}
     geolocationtype: {{geolocationType}}
+    <ul>
+      <li><h6>Tags</h6></li>
+      <li>People: {{tags.people}}</li>
+      <li>Places: {{tags.locations}}</li>
+      <li>Orgs: {{tags.orgs}}</li>
+      <li>Other: {{tags.nouns}}</li>
+    </ul>
+
   </div>
 </div>
   <ul class="comments">

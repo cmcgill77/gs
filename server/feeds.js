@@ -3,8 +3,47 @@
 //initialize geocoder just using google for default for now TODO use OSM / Mapquest for geocoder provider after google rate limit is reached move this function to top of feeds.js
 // AIzaSyBA3dFwtiLtM3H-F9Kkl_F7ez52ubPXE8I
 
+import nlp from 'compromise'
+
+//function to turn twitter date string into a real date
 function parseTwitterDate(text) {
 return new Date(Date.parse(text.replace(/( +)/, ' UTC$1')));
+}
+
+//function using NLP compromose to parse out locations from text and stick them in an array
+function getLocations(text) {
+  var r = nlp(text)
+  var places = r.places()
+  places.sort('alpha')
+  console.log (places.out('array'))
+  return places.out('array')
+}
+
+//same thing but for people
+function getPeople(text) {
+  var r = nlp(text)
+  var people = r.people()
+  people.sort('alpha')
+  console.log (people.out('array'))
+  return people.out('array')
+}
+
+//and organizations
+function getOrgs(text) {
+  var r = nlp(text)
+  var orgs = r.organizations()
+  orgs.sort('alpha')
+  console.log (orgs.out('array'))
+  return orgs.out('array')
+}
+
+//and nouns in general, why not!
+function getNouns(text) {
+  var r = nlp(text)
+  var nouns = r.nouns()
+  nouns.sort('alpha')
+  console.log (nouns.out('array'))
+  return nouns.out('array')
 }
 
 Meteor.methods({
@@ -107,18 +146,6 @@ Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLo
 
      console.log(tweets.statuses[i].id_str);
 
-     //extract entities from twitter text, loop through them and push into tags array TODO switch NLP from nlp-compromise to SPACY-nlp
-
-     var entity = nlp.spot(tweets.statuses[i].text);
-     var tags = [];
-
-     console.log('tags: ' + entity.length);
-     for (t = 0; t < entity.length; t++) {
-       tags.push (entity[t].text);
-
-     }
-     console.log (tags);
-
      var twitterPost = {
       userId: user,
       author: tweets.statuses[i].user.screen_name,
@@ -131,7 +158,12 @@ Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLo
       url: 'https://www.twitter.com/'+tweets.statuses[i].user.screen_name+'/status/'+tweets.statuses[i].id_str,
       body: tweets.statuses[i].text,
       tweetID: tweets.statuses[i].id_str,
-      tags: tags,
+      tags: {
+        places: getLocations(tweets.statuses[i].text),
+        people: getPeople(tweets.statuses[i].text),
+        orgs: getOrgs(tweets.statuses[i].text),
+        nouns: getNouns(tweets.statuses[i].text)
+      },
       image: tweets.statuses[i].user.profile_image_url
      }
 
@@ -198,14 +230,15 @@ Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLo
 
      //extract entities from twitter text, loop through them and push into tags array
 
-     var entity = nlp.spot(tweets.statuses[i].text);
+    //  var entity = nlp.spot(tweets.statuses[i].text);
      var tags = [];
+     //
+    //  //console.log('tags: ' + entity.length);
+    //  for (t = 0; t < entity.length; t++) {
+    //    tags.push (entity[t].text);
+     //
+    //  }
 
-     //console.log('tags: ' + entity.length);
-     for (t = 0; t < entity.length; t++) {
-       tags.push (entity[t].text);
-
-     }
      //console.log (tags);
      //console.log(JSON.stringify(tweets.statuses[i], null, 2));
 
@@ -277,7 +310,12 @@ Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLo
              url: 'https://www.twitter.com/'+tweets.statuses[i].user.screen_name+'/status/'+tweets.statuses[i].id_str,
              body: tweets.statuses[i].text,
              tweetID: tweets.statuses[i].id_str,
-             tags: tags,
+             tags: {
+               places: getLocations(tweets.statuses[i].text),
+               people: getPeople(tweets.statuses[i].text),
+               orgs: getOrgs(tweets.statuses[i].text),
+               nouns: getNouns(tweets.statuses[i].text)
+             },
              location: userLocation,
              latitude: coordinates[0],
              longitude: coordinates[1],
@@ -303,7 +341,12 @@ Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLo
       url: 'https://www.twitter.com/'+tweets.statuses[i].user.screen_name+'/status/'+tweets.statuses[i].id_str,
       body: tweets.statuses[i].text,
       tweetID: tweets.statuses[i].id_str,
-      tags: tags,
+      tags: {
+        places: getLocations(tweets.statuses[i].text),
+        people: getPeople(tweets.statuses[i].text),
+        orgs: getOrgs(tweets.statuses[i].text),
+        nouns: getNouns(tweets.statuses[i].text)
+      },
       location: tweets.statuses[i].place.full_name,
       latitude: tweets.statuses[i].geo.coordinates[0],
       longitude: tweets.statuses[i].geo.coordinates[1],
@@ -382,6 +425,7 @@ var postAuthor = Sources.find({author: twitterPost.author}).fetch();
 else {
 console.log ('document already in DB, skipping');
 console.log ('--------------------------');
+
 
 }
     }
