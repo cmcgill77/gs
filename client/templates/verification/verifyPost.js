@@ -224,7 +224,7 @@ Template.postVerify.events({
 
       Meteor.call('addVerificationData', verificationData);
 
-    Router.go('home');
+    Router.go('list');
 
   }
 

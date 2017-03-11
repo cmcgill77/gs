@@ -23,6 +23,11 @@
                     results found!
                 </div>
             {{/EasySearch.IfNoResults}}
+
+<!-- TODO: need to decide if spinner here makes searches look too busy, maybe remove or tweak card fade in animation -->
+            {{#EasySearch.IfSearching index=listIndex}}
+                <div>{{>spinner}}</div>
+            {{/EasySearch.IfSearching}}
         </div>
     </div>
 </template>
