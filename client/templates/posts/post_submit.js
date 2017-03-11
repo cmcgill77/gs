@@ -1,4 +1,4 @@
-//TODO separate post submit template out into its own mini app and use meteor-build to create mobile apps
+//TODO:230 separate post submit template out into its own mini app and use meteor-build to create mobile apps
 
 Template.postSubmit.rendered = function () {
     GoogleMaps.load();

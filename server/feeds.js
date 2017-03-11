@@ -1,16 +1,16 @@
 //server methods for creating / inserting feeds as well as running feeds (ie getting the data)
-//TODO feeds.js needs a massive refactor, it is kind of a mess.  it's working, but its just so ugly
-//TODO server needs to continously collect all user feeds.  maybe use a worker library to manage rate limits and retry later if exceeded
-//TODO store and use user credentials to connect to twitter, google, etc
-//TODO make geo / nogeo feed results behave better (ie if a nogeo post contains geodata make it geo and vice-versa)
+//TODO:110 feeds.js needs a massive refactor, it is kind of a mess.  it's working, but its just so ugly
+//TODO:240 server needs to continously collect all user feeds.  maybe use a worker library to manage rate limits and retry later if exceeded
+//TODO:260 store and use user credentials to connect to twitter, google, etc
+//TODO:170 make geo / nogeo feed results behave better (ie if a nogeo post contains geodata make it geo and vice-versa)
 //FIXME catch errors from google geocoder, if it can't find a location, post should be turned into nogeo
-//TODO switch from nlp compromise to Spacy NLP to (hopefully) improve entity recognition
-//TODO implement all enhancements made for twitter feeds on RSS feeds as well (NLP, geocoding, etc)
-//TODO parse out and display twitter entities on post details page
-//TODO check all data before inserting into collections
+//TODO:270 switch from nlp compromise to Spacy NLP to (hopefully) improve entity recognition
+//TODO:130 implement all enhancements made for twitter feeds on RSS feeds as well (NLP, geocoding, etc)
+//TODO:220 parse out and display twitter entities on post details page
+//TODO:50 check all data before inserting into collections
 
 
-//initialize geocoder just using google for default for now TODO use OSM / Mapquest for geocoder provider after google rate limit is reached move this function to top of feeds.js
+//initialize geocoder just using google for default for now TODO:300 use OSM / Mapquest for geocoder provider after google rate limit is reached move this function to top of feeds.js
 // AIzaSyBA3dFwtiLtM3H-F9Kkl_F7ez52ubPXE8I
 
 import nlp from 'compromise'
@@ -368,7 +368,7 @@ Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLo
      //console.log (twitterPost);
 
      //insert twitter data into the posts collection
-     //TODO do a duplicate check before inserting twitterPost into posts collection
+     //TODO:90 do a duplicate check before inserting twitterPost into posts collection
 
 //console.log(twitterPost);
 

@@ -9,8 +9,8 @@ if (Meteor.isClient) {
     );
   });
 
-//TODO user settings to provide api keys to use, per user
-//TODO user setting to specify where maps should be centered for each user
+//TODO:330 user settings to provide api keys to use, per user
+//TODO:320 user setting to specify where maps should be centered for each user
 
 
   Template.body.helpers({

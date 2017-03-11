@@ -162,7 +162,7 @@ var RenderControls = function(args) {
 
   // instantiate our graph!
 
-//TODO use graph-button click event to build seriesData array for each series from source posts, then insert into series object instead of the random numbers that are there now
+//TODO:310 use graph-button click event to build seriesData array for each series from source posts, then insert into series object instead of the random numbers that are there now
 
   var graph = new Rickshaw.Graph( {
     element: document.getElementById("chart"),

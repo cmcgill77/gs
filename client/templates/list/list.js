@@ -1,5 +1,5 @@
-//TODO add some additional filters / facets to search options
-//TODO add a simple time-series graph to summarize data in current view
+//TODO:30 add some additional filters / facets to search options
+//TODO:10 add a simple time-series graph to summarize data in current view
 
 Meteor.subscribe('postList');
 

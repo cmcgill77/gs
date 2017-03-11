@@ -21,9 +21,9 @@ $('#us2').locationpicker({
 
   }; */
 
-//TODO improve twitter feed creation form to help user with twitter's advanced operators
-//TODO feed preview function to display a sample of data that these feed parameters will return
-//TODO location picker controls are pretty crappy, need to do something better
+//TODO:140 improve twitter feed creation form to help user with twitter's advanced operators
+//TODO:100 feed preview function to display a sample of data that these feed parameters will return
+//TODO:150 location picker controls are pretty crappy, need to do something better
 
 Template.createTwitterFeed.events({
     'submit form': function(event) {

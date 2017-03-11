@@ -1,5 +1,5 @@
 // Fixture data
-//TODO turn these into tutorial posts that new users will see when they create an account
+//TODO:280 turn these into tutorial posts that new users will see when they create an account
 if (Posts.find().count() === 0) {
   var now = new Date().getTime();
 

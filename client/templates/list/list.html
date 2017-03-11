@@ -16,7 +16,7 @@
                     {{> post_card}}
                 </div>
             {{/EasySearch.Each}}
-            {{> EasySearch.LoadMore index=listIndex attributes=loadMoreAttributes content="Load more"}}
+            {{> EasySearch.LoadMore index=listIndex attributes=loadMoreAttributes content="Load more" count=12}}
             {{#EasySearch.IfNoResults index=listIndex}}
                 <div class="notice notice-danger">
                     <strong>No</strong>

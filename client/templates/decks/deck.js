@@ -1,6 +1,6 @@
-//TODO construct timeline array based off of cards in deck, see timeline docs
-//TODO pan / gray out map based on geo data or lack thereof
-//TODO create a proper interface for adding cards to decks / managing decks
+//TODO:60 construct timeline array based off of cards in deck, see timeline docs
+//TODO:210 pan / gray out map based on geo data or lack thereof
+//TODO:70 create a proper interface for adding cards to decks / managing decks
 
 Template.deck.rendered = function () {
   var map = L.map('timeline-map').setView([33.5074705,36.2477903], 13);

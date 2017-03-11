@@ -1,5 +1,5 @@
-//TODO need to insert verification comments into posts collection on submit, as well as form validation
-//TODO form validation across the board, probably look to use autoform library along with mongo schema
+//TODO:200 need to insert verification comments into posts collection on submit, as well as form validation
+//TODO:120 form validation across the board, probably look to use autoform library along with mongo schema
 
 Template.postListVerify.rendered = function() {
 
@@ -191,7 +191,7 @@ Template.postListVerify.helpers({
         var typeDescription = 'This report was collected via ' + this.type + ' by ' + this.author;
         return typeDescription;
     },
-//TODO make a streetview meta-data request before the actual image request to save on rate limit
+//TODO:160 make a streetview meta-data request before the actual image request to save on rate limit
     'locationInfo1': function() {
         var streetView = '';
         var StreetViewKey = 'AIzaSyCVE8R3AYOX8X-CD3zJ_uO0a5lmzrTdgPg';

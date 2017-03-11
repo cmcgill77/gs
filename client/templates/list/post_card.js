@@ -1,5 +1,5 @@
 //FIXME need to get jquery for card back reveal from firing incorrect number of times
-//TODO should probably turn verification color into some sort of universal helper considering the number of times something similar is needed
+//TODO:250 should probably turn verification color into some sort of universal helper considering the number of times something similar is needed
 
 var POST_HEIGHT = 80;
 var Positions = new Meteor.Collection(null);
