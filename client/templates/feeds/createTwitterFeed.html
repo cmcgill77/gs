@@ -1,26 +1,23 @@
 <template name="createTwitterFeed">
- 
+
 <div class="container-fluid">
   <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 
 <div class="row">
   <div id="submit-report-form" class="col-xs-12 col-md-6"> <!-- row containing submit report form -->
- 
+
  <h6 style="background-color: #F5F5F5"><img style="width: 30px; height: 30px"  src="Twitter_icon_blue.png"><b> Create a new Twitter feed</b></h6>
-    
+
   <form class="main form">
     <fieldset>
-    
-    
+        
     <div class="form-group">
       <label for="inputName" class="col-lg-2 control-label"><b>Name</b></label>
               <div class="col-lg-10">
                 <input type="text" class="form-control" id="inputName" placeholder="Name your feed">
               </div>
             </div>
-    
-            
-    
+
             <div class="form-group">
               <label for="textArea" class="col-lg-2 control-label"><b>Query</b></label>
               <div class="col-lg-10">
@@ -32,16 +29,11 @@
                   </label>
                  </div>
               </div>
-              
+
             </div>
 
-    
-    
-    
-    
-    
-  <div id="locationControls" class="animated slideInLeft"> 
-       
+  <div id="locationControls" class="animated slideInLeft">
+
    <div class="form-group">
      <label for="address" class="col-lg-2 control-label"><b>Location</b></label>
               <div class="col-lg-10">
@@ -49,46 +41,36 @@
                 <span class="help-block">Drag and drop the marker on the map to pick a location</span>
               </div>
               </div>
-      
-     
-
 
 <div class="col-lg-10 col-lg-offset-2">
       <input type="text" id="radius" class="form-control" placeholder="Enter search radius in meters"/>
       <span class="help-block">Enter a search radius in meters</span>
-  
-  <span class="label label-default">Lat.:</span> 
-    <input type="text" id="lat" disabled=""/>  
- 
-  
-    <span class="label label-default">Long.:</span> 
-    <input type="text" id="lon" disabled=""/> 
-      
-</div>             
-    
-      </div>       
-    
-   
-    
+
+  <span class="label label-default">Lat.:</span>
+    <input type="text" id="lat" disabled=""/>
+
+    <span class="label label-default">Long.:</span>
+    <input type="text" id="lon" disabled=""/>
+
+</div>
+
+      </div>
+
       <div class="col-lg-9 col-lg-offset-8" style="margin-top: 10px">
         <button type="reset" class="btn btn-link"><i class="fa fa-eraser"></i> Clear</button>
         <button type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i> Submit</button>
       </div>
-     
-    </fieldset> 
+
+    </fieldset>
   </form>
-    
-  
-    
+
   </div>
   <div class="col-xs-6 col-md-6">  <!-- row containing location picker map -->
     <div id="mapControls" class="animated slideInRight">
-    <div id="us2" style="width: 100%; height: 900px;"></div>	
+    <div id="us2" style="width: 100%; height: 900px;"></div>
     </div>
   </div>
-  
+
   </div>
   </div>
- 
-  
 </template>

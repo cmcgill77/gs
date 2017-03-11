@@ -222,13 +222,8 @@ Template.postVerify.events({
       verificationSteps : Session.get ('currentScore'),
       }
 
-      Meteor.call('addVerificationData', verificationData);
-
+    Meteor.call('addVerificationData', verificationData);
     Router.go('list');
 
   }
-
-
-
-
 });

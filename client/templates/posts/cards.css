@@ -1,22 +1,18 @@
-
-
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
-
 .ui-tooltip {
-  color: #EEEEEE;
-  background-color: #404040;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
--moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-box-shadow: 4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    color: #EEEEEE;
+    background-color: #404040;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-
 
 .front {
-  display: table;
+    display: table;
 }
 
-.card .card-image{
+.card .card-image {
     overflow: hidden;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -25,13 +21,14 @@ box-shadow: 4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     transform-style: preserve-3d;
 }
 
-.card .card-image img{
+.card .card-image img {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -ms-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
+
 
 /*.card .card-image:hover img{
     -webkit-transform: scale(1.2) rotate(-7deg);
@@ -41,34 +38,33 @@ box-shadow: 4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     transform: scale(1.2) rotate(-7deg);
 }*/
 
-
-
-.card{
+.card {
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
     position: relative;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .card .card-content {
     padding: 10px;
 }
 
-.card .card-content .card-title, .card-reveal .card-title{
+.card .card-content .card-title, .card-reveal .card-title {
     font-size: 24px;
     font-weight: 200;
 }
 
-.card .card-action{
+.card .card-action {
     padding: 10px;
     border-top: 1px solid rgba(160, 160, 160, 0.2);
 }
-.card .card-action a{
+
+.card .card-action a {
     font-size: 12px;
     color: #ffab40;
-    text-transform:uppercase;
+    text-transform: uppercase;
     margin-right: 20px;
     -webkit-transition: color 0.3s ease;
     -moz-transition: color 0.3s ease;
@@ -76,114 +72,141 @@ box-shadow: 4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     -ms-transition: color 0.3s ease;
     transition: color 0.3s ease;
 }
-.card .card-action a:hover{
-    color:#ffd8a6;
-    text-decoration:none;
+
+.card .card-action a:hover {
+    color: #ffd8a6;
+    text-decoration: none;
 }
 
-.card .card-reveal{
+.card .card-reveal {
     padding: 20px;
     position: absolute;
     background-color: #FFF;
     width: 100%;
     overflow-y: auto;
     /*top: 0;*/
-    left:0;
-    bottom:0;
+    left: 0;
+    bottom: 0;
     height: 100%;
     z-index: 1;
     display: none;
 }
 
-.card .card-reveal p{
+.card .card-reveal p {
     color: rgba(0, 0, 0, 0.71);
-    margin:20px ;
+    margin: 20px;
 }
 
-.btn-custom{
+.btn-custom {
     background-color: transparent;
-    font-size:18px;
+    font-size: 18px;
 }
 
-.card-action a.discuss.btn.btn-link{
-  margin: 0px;
+.card-action a.discuss.btn.btn-link {
+    margin: 0px;
 }
 
 .card-author {
-  font-size: 14px;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 0px;
 }
 
 .post-title {
-  display: block;
-  width: 375px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    display: block;
+    width: 375px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .verification-level-1 {
     border-left: 6px solid #F29A7C;
 }
+
 .verification-level-1>strong {
     color: #F29A7C;
 }
+
 .verification-level-2 {
     border-left: 6px solid #F0AD81;
 }
+
 .verification-level-2>strong {
     color: #F0AD81;
-}.verification-level-3 {
+}
+
+.verification-level-3 {
     border-left: 6px solid #EFBB86;
 }
+
 .verification-level-3>strong {
     color: #EFBB86;
-}.verification-level-4 {
+}
+
+.verification-level-4 {
     border-left: 6px solid #EEC987;
 }
+
 .verification-level-4>strong {
     color: #EEC987;
-}.verification-level-5 {
+}
+
+.verification-level-5 {
     border-left: 6px solid #EDD689;
 }
+
 .verification-level-5>strong {
     color: #EDD689;
-}.verification-level-6 {
+}
+
+.verification-level-6 {
     border-left: 6px solid #E9DC89;
 }
+
 .verification-level-6>strong {
     color: #E9DC89;
-}.verification-level-7 {
+}
+
+.verification-level-7 {
     border-left: 6px solid #E3E08C;
 }
+
 .verification-level-7>strong {
     color: #E3E08C;
-}.verification-level-8 {
+}
+
+.verification-level-8 {
     border-left: 6px solid #CAD695;
 }
+
 .verification-level-8>strong {
     color: #CAD695;
-}.verification-level-9 {
+}
+
+.verification-level-9 {
     border-left: 6px solid #ACCD94;
 }
+
 .verification-level-9>strong {
     color: #ACCD94;
-}.verification-level-10 {
+}
+
+.verification-level-10 {
     border-left: 6px solid #82CA99;
 }
+
 .verification-level-10>strong {
     color: #82CA99;
 }
 
 .unverified {
-  border-left: 6px solid #7f7f84;
+    border-left: 6px solid #7f7f84;
 }
 
 .unverified>strong {
-  color: #7f7f84;
+    color: #7f7f84;
 }
 
 

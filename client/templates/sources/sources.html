@@ -16,39 +16,31 @@
 
       <ul style="padding-left: 20px;">
         {{#EasySearch.Each index=sourcesIndex attributes=inputAttributes}}
-
-            <div class="row notice {{sourceLocColor}} source" style="padding-top: 10;">
+        <div class="row notice {{sourceLocColor}} source" style="padding-top: 10;">
           <li>
-
-
               <img style="float: left; width: 50px; height: 50px;" src="{{image}}">
               <span class="source-author"><strong>{{author}}</strong> <i class="fa {{sourceType}}" aria-hidden="true"></i></span>
               <p>{{sourceScore}}</p>
             <button class="graph-button btn btn-link"><i class="fa fa-area-chart"></i></button>
             <span class="badge badge-count" style="float: right;">{{postCount}}</span>
-
-
-</li>
- </div>
-
+          </li>
+        </div>
         {{/EasySearch.Each}}
       </ul>
+
       {{> EasySearch.LoadMore index=sourcesIndex attributes=loadMoreAttributes content="Load more"}}
 
       {{#EasySearch.IfNoResults index=sourcesIndex}}
-      <div class="notice notice-danger">
-     <strong>No</strong> results found!
- </div>
+        <div class="notice notice-danger">
+          <strong>No</strong> results found!
+        </div>
       {{/EasySearch.IfNoResults}}
+
 		</div>
 		<div id="sources-content" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-			<div class="row {{showGraph}} animate slideInDown">
+		<div class="row {{showGraph}} animate slideInDown">
 
 <!-- rickshaw start -->
-
-
-
-
 
         <div id="content" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
@@ -113,11 +105,7 @@
       		<div id="timeline"></div>
       		<div id="preview"></div>
       	</div>
-
       </div>
-
-
-
 
       <!-- rickshaw stop -->
 
@@ -130,26 +118,19 @@
         <div class="source-container" style="background: #7f7f84; display: inline-block;">
           {{#each showSelectedPosts}}
             <div class="verification-source {{postVerColor}}"></div>
-
-
-                {{/each}}
-
-            </div>
-            {{/if}}
+          {{/each}}
+        </div>
+{{/if}}
 
 			<div class=row id="content-wrapper" style="background-color: #FFFFFF;">
 
           {{#each showSelectedPosts}}
-
-          <div class="col-md-4 blockquote animated fadeIn" style="padding-left: 5px; padding-right: 5px; padding-bottom: 5px; padding-top: 5px;">
-           <div>
-          {{> postItem}}
+            <div class="col-md-4 blockquote animated fadeIn" style="padding-left: 5px; padding-right: 5px; padding-bottom: 5px; padding-top: 5px;">
+              <div>
+                {{> postItem}}
+              </div>
             </div>
-            </div>
-
         {{/each}}
-
-
 
 			</div>
     </div>

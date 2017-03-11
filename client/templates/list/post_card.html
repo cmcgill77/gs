@@ -19,9 +19,7 @@
                 </div><!-- card image -->
 
                 <div class="card-content">
-
                     <span class="card-title">
-
                       <h6>
                       <span>
                         <i class="fa fa-quote-left" aria-hidden="true" style="font-size: 8px; vertical-align: 5px;"></i>
@@ -29,29 +27,18 @@
                         <i class="fa fa-quote-right" aria-hidden="true" style="font-size: 8px; vertical-align: 5px;"></i>
                       </span>
                       </h6>
-
-
                       <ul style="font-size: 12px;">
                       <li>
-
-                        <!-- {{pluralize votes "Vote"}}, -->
-
                         </li>
                         <li>{{submitted}}</li>
                         <li>{{domain}} <i class="fa fa-crosshairs {{locationClass}}" aria-hidden="true"></i></li>
-
                       </ul>
-
                       <h6>
                       <a href="{{pathFor 'cardDetails'}}">{{pluralize commentsCount "comment"}}</a>
                     </h6>
-
                     </span>
-
                 </div><!-- card content -->
                 <div class="card-action">
-
-
                     <a style="color: #424242;" href="{{pathFor 'cardDetails'}}" class="details btn btn-link"><i class="fa fa-asterisk"></i> Details</a>
                     {{#if ownPost}}<a style="color: #424242;" href="{{pathFor 'cardEdit'}}" class="discuss btn btn-link"><i class="fa fa-pencil"></i> Edit</a>{{/if}}
                     <a style="color: #424242;" href="{{pathFor 'postListVerify'}}" class="discuss btn btn-link"><i class="fa fa-check"></i> Verify</a>
@@ -66,6 +53,4 @@
         </div>
     </div>
 </div>
-
-
 </template>

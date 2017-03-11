@@ -1,27 +1,25 @@
-
 /*#content-container {
   height: calc(100%);
   padding-left: 20px;
 }*/
 
 #side-nav {
-
-  position: relative;
-  z-index: 1;
-  height:100vh;
-  overflow: scroll;
-  padding-top: 20px;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    overflow: scroll;
+    padding-top: 20px;
 }
 
 #sources-content {
-  height:100vh;
-  overflow: scroll;
-
+    height: 100vh;
+    overflow: scroll;
 }
 
 #sources-content::-webkit-scrollbar {
     display: none;
 }
+
 
 /*#content-wrapper {
 
@@ -39,92 +37,89 @@ background-color: #FFFFFF;
 }
 
 #graph {
-
-position: relative;
-z-index: 2;
-margin-left: 60px;
-padding-left: 60px;
-background-color: #FFFFFF;
-
-
+    position: relative;
+    z-index: 2;
+    margin-left: 60px;
+    padding-left: 60px;
+    background-color: #FFFFFF;
 }
 
 .visible {
-  display: inline;
+    display: inline;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 .graph-button {
-  float: right;
-  display: inline-block;
-  margin-top: 6px;
-  margin-right: 5px;
-  background-color: transparent;
-  color: #7F7F84;
+    float: right;
+    display: inline-block;
+    margin-top: 6px;
+    margin-right: 5px;
+    background-color: transparent;
+    color: #7F7F84;
 }
 
 .graph-button:hover {
-  color: #2196F3;
+    color: #2196F3;
 }
 
 .load-more-button {
-
-  width: 100%;
-
+    width: 100%;
 }
 
 .load-more-button:hover {
-  background-color: #EEEEEE;
+    background-color: #EEEEEE;
 }
 
-
 #source-search {
-  margin-bottom: 20px;
-  margin-top: -10px;
-  margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-left: 10px;
 }
 
 .source {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .source:hover {
-  background-color: #EEEEEE;
+    background-color: #EEEEEE;
 }
 
 .fa-twitter {
-  color: #00ACED;
+    color: #00ACED;
 }
 
 .fa-rss {
-  color: #FF9900;
+    color: #FF9900;
 }
 
 .fa-instagram {
-  color: #895A4D;
+    color: #895A4D;
 }
 
 .verification-source {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  border-left: 0px;
-  border-right: 0px;
-
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-left: 0px;
+    border-right: 0px;
 }
 
 .verification-container {
-  font-size: 0;
+    font-size: 0;
 }
+
 .verification-container div {
-  display: inline-block; width: 100px; height: 30px; font-size: 12px;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
 }
 
 .verification-source-1 {
@@ -168,8 +163,14 @@ background-color: #FFFFFF;
 }
 
 .unverified-source {
-  background-color: #7f7f84;
+    background-color: #7f7f84;
 }
 
-.source-container { font-size: 0; }
-.source-container div { display: inline-block; font-size: 12; }
+.source-container {
+    font-size: 0;
+}
+
+.source-container div {
+    display: inline-block;
+    font-size: 12;
+}
