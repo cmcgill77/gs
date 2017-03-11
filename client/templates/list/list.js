@@ -1,3 +1,6 @@
+//TODO add some additional filters / facets to search options
+//TODO add a simple time-series graph to summarize data in current view
+
 Meteor.subscribe('postList');
 
 Template.list.rendered = function() {

@@ -1,4 +1,14 @@
-//should write something about what this all does here
+//server methods for creating / inserting feeds as well as running feeds (ie getting the data)
+//TODO feeds.js needs a massive refactor, it is kind of a mess.  it's working, but its just so ugly
+//TODO server needs to continously collect all user feeds.  maybe use a worker library to manage rate limits and retry later if exceeded
+//TODO store and use user credentials to connect to twitter, google, etc
+//TODO make geo / nogeo feed results behave better (ie if a nogeo post contains geodata make it geo and vice-versa)
+//FIXME catch errors from google geocoder, if it can't find a location, post should be turned into nogeo
+//TODO switch from nlp compromise to Spacy NLP to (hopefully) improve entity recognition
+//TODO implement all enhancements made for twitter feeds on RSS feeds as well (NLP, geocoding, etc)
+//TODO parse out and display twitter entities on post details page
+//TODO check all data before inserting into collections
+
 
 //initialize geocoder just using google for default for now TODO use OSM / Mapquest for geocoder provider after google rate limit is reached move this function to top of feeds.js
 // AIzaSyBA3dFwtiLtM3H-F9Kkl_F7ez52ubPXE8I
@@ -10,7 +20,7 @@ function parseTwitterDate(text) {
 return new Date(Date.parse(text.replace(/( +)/, ' UTC$1')));
 }
 
-//function using NLP compromose to parse out locations from text and stick them in an array
+//function using NLP compromise to parse out locations from text and stick them in an array
 function getLocations(text) {
   var r = nlp(text)
   var places = r.places()

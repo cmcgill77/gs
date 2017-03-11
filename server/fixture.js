@@ -1,4 +1,5 @@
 // Fixture data
+//TODO turn these into tutorial posts that new users will see when they create an account
 if (Posts.find().count() === 0) {
   var now = new Date().getTime();
 
@@ -11,7 +12,7 @@ if (Posts.find().count() === 0) {
     profile: { name: 'cmcgill@edge360.com' }
   });
   var sacha = Meteor.users.findOne(sachaId);
-  
+
   // create test posts with comments
   var telescopeId = Posts.insert({
     title: 'E360 OSINT Test',
@@ -20,7 +21,7 @@ if (Posts.find().count() === 0) {
     url: 'http://www.edge360.com',
     submitted: new Date(now - 7 * 3600 * 1000),
     commentsCount: 2,
-    upvoters: [], 
+    upvoters: [],
     votes: 0
   });
 
@@ -47,7 +48,7 @@ if (Posts.find().count() === 0) {
     url: 'http://meteor.com',
     submitted: new Date(now - 10 * 3600 * 1000),
     commentsCount: 0,
-    upvoters: [], 
+    upvoters: [],
     votes: 0
   });
 
@@ -58,7 +59,7 @@ if (Posts.find().count() === 0) {
     url: 'http://www.edge360.com',
     submitted: new Date(now - 12 * 3600 * 1000),
     commentsCount: 0,
-    upvoters: [], 
+    upvoters: [],
     votes: 0
   });
 
@@ -70,7 +71,7 @@ if (Posts.find().count() === 0) {
       url: 'http://google.com/?q=test-' + i,
       submitted: new Date(now - i * 3600 * 1000 + 1),
       commentsCount: 0,
-      upvoters: [], 
+      upvoters: [],
       votes: 0
     });
   }

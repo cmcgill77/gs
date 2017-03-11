@@ -1,3 +1,6 @@
+//this is just a bit of boilerplate to initialize google maps on client load, using a set API key for now, but see below
+//currently using google maps for the location-picker type UI's since geocoding results seem better than nominatum
+
 if (Meteor.isClient) {
   Meteor.startup(function() {
     GoogleMaps.load( {
@@ -5,6 +8,10 @@ if (Meteor.isClient) {
       }
     );
   });
+
+//TODO user settings to provide api keys to use, per user
+//TODO user setting to specify where maps should be centered for each user
+
 
   Template.body.helpers({
     exampleMapOptions: function() {

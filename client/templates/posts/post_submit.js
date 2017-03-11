@@ -1,7 +1,7 @@
+//TODO separate post submit template out into its own mini app and use meteor-build to create mobile apps
+
 Template.postSubmit.rendered = function () {
     GoogleMaps.load();
-
-
 
 $('#us2').locationpicker({
 	location: {latitude: 38.907364, longitude: -77.038427},
