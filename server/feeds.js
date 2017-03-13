@@ -10,7 +10,7 @@
 //TODO:50 check all data before inserting into collections
 
 
-//initialize geocoder just using google for default for now TODO:300 use OSM / Mapquest for geocoder provider after google rate limit is reached move this function to top of feeds.js
+//initialize geocoder just using google for default for now 
 // AIzaSyBA3dFwtiLtM3H-F9Kkl_F7ez52ubPXE8I
 
 import nlp from 'compromise'
@@ -25,7 +25,7 @@ function getLocations(text) {
   var r = nlp(text)
   var places = r.places()
   places.sort('alpha')
-  console.log (places.out('array'))
+  //console.log (places.out('array'))
   return places.out('array')
 }
 
@@ -34,7 +34,7 @@ function getPeople(text) {
   var r = nlp(text)
   var people = r.people()
   people.sort('alpha')
-  console.log (people.out('array'))
+  //console.log (people.out('array'))
   return people.out('array')
 }
 
@@ -43,7 +43,7 @@ function getOrgs(text) {
   var r = nlp(text)
   var orgs = r.organizations()
   orgs.sort('alpha')
-  console.log (orgs.out('array'))
+  //console.log (orgs.out('array'))
   return orgs.out('array')
 }
 
@@ -52,7 +52,7 @@ function getNouns(text) {
   var r = nlp(text)
   var nouns = r.nouns()
   nouns.sort('alpha')
-  console.log (nouns.out('array'))
+  //console.log (nouns.out('array'))
   return nouns.out('array')
 }
 
@@ -287,6 +287,8 @@ Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLo
           if (locCheck[0] === undefined) {
             console.log('location not found in cache, asking google')
             var placeLatLon = geo.geocode(place);
+
+            //console.log(placeLatLon);
             console.log('getting location for ' + userLocation);
             var coordinates = [placeLatLon[0].latitude, placeLatLon[0].longitude];
             console.log ('got location of ' + coordinates[0] + ' ' + coordinates[1]);
@@ -368,7 +370,7 @@ Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLo
      //console.log (twitterPost);
 
      //insert twitter data into the posts collection
-     //TODO:90 do a duplicate check before inserting twitterPost into posts collection
+
 
 //console.log(twitterPost);
 

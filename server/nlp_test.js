@@ -1,3 +1,5 @@
+//NOTE getting error at runtime when trying to import, looks like will need to wait for meteor node 6 support
+
 //import spacyNLP from 'spacy-nlp'
 
 //const spacyNLP = require('spacy-nlp')
