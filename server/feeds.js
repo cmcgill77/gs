@@ -10,7 +10,7 @@
 //TODO:50 check all data before inserting into collections
 
 
-//initialize geocoder just using google for default for now 
+//initialize geocoder just using google for default for now
 // AIzaSyBA3dFwtiLtM3H-F9Kkl_F7ez52ubPXE8I
 
 import nlp from 'compromise'
@@ -201,12 +201,44 @@ Sources.update (owningSource[0]._id, {$set: {"levelOfConfidence.locValue": newLo
       image: twitterPost.image
      });
      console.log('inserting tweet in DB');
+
+     //insert source data into sources collection
+     var currentUserId = Meteor.userId();
+     var postAuthor = Sources.find({author: twitterPost.author}).fetch();
+        console.log(postAuthor);
+        var sourcePostCount = postAuthor.sourcePostCount;
+        //console.log(sourcePostCount);
+        if (postAuthor.count() !== 0) {
+
+
+          console.log ('current source post count is ' + postAuthor[0].sourcePostCount);
+
+          var newPostCount = postAuthor[0].sourcePostCount + 1;
+          Sources.update(postAuthor[0]._id, {$set: {sourcePostCount: newPostCount}});
+
+          console.log ('post count by this source has been updated to ' + newPostCount);
+        }
+        else {
+          Sources.insert({
+            author: twitterPost.author,
+            type: 'twitter',
+            image: twitterPost.image,
+            sourcePostCount: 1,
+            lastPost: twitterPost.submitted,
+            createdBy: currentUserId,
+            levelOfConfidence: {locValue: 0, verifiedPosts: []}
+          })
+          console.log ('new source created');
+          newSource = Sources.find({author: twitterPost.author})
+          //console.log (newSource);
+        }
 }
 
      else {
        console.log ('tweet already exists in DB, skipping');
        console.log ('-------------------------------');
      }
+
   }
     })
     )
