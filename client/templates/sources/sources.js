@@ -11,7 +11,7 @@ Template.sources.rendered = function() {
 
 
     //extension logic -- this stuff feeds the graph new data at a set interval and enable the render controls (area, bar, stack stream, etc)
-    //feeding random numbers for now will connect posts by source to individual series 
+    //feeding random numbers for now will connect posts by source to individual series
 
     var RenderControls = function(args) {
 
@@ -389,7 +389,7 @@ Template.sources.helpers({
             type: selectedType
         }, {
             sort: {
-                submitted: -1
+                created: -1
             }
         });
     },
