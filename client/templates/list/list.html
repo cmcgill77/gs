@@ -11,13 +11,15 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     Score</button>
                 <button type="button" id="graph-button" class="btn btn-link">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    Graph</button>
+                    <i class="fa fa-area-chart" aria-hidden="true"></i>
+                    </button>
             </div>
-            <div class="list-graph graph-hidden animate slideInDown">graph goes here!!!</div>
+            <div id="list-graph" class="animated"></div>
             {{#EasySearch.Each index=listIndex attributes=inputAttributes}}
                 <div class="col-md-3" style="padding-left: 5px; padding-right: 5px; padding-bottom: 10px;">
                     {{> post_card}}
+                   <!-- need a helper here to build data array for graph maybe? -->
+
                 </div>
             {{/EasySearch.Each}}
             {{> EasySearch.LoadMore index=listIndex attributes=loadMoreAttributes content="Load more" count=12}}

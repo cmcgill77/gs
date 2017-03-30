@@ -8,10 +8,15 @@ input:focus {
     outline:none;
 }
 
-.list-graph {
-  display: none;
+#list-graph {
+  display:none;
 }
 
-.graph-show {
-  display:block;
+#graph-button {
+  float:right;
+  color: #7F7F84;
+}
+
+#graph-button:hover {
+  color: #2196F3;
 }
