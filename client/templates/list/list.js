@@ -29,5 +29,10 @@ Template.list.events({
     'click .sorting': (e) => {
         ListIndex.getComponentMethods()
             .addProps('sortBy', $(e.target).val())
+    },
+    'click #graph-button': function (e) {
+      e.preventDefault();
+      console.log('clicked graph-list button');
+      $("div.graph-list").toggleClass("graph-show");
     }
 })

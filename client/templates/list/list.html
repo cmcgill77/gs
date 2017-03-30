@@ -10,7 +10,11 @@
                 <button type="button" value="verificationScore" class="btn btn-link sorting">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     Score</button>
+                <button type="button" id="graph-button" class="btn btn-link">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    Graph</button>
             </div>
+            <div class="list-graph graph-hidden animate slideInDown">graph goes here!!!</div>
             {{#EasySearch.Each index=listIndex attributes=inputAttributes}}
                 <div class="col-md-3" style="padding-left: 5px; padding-right: 5px; padding-bottom: 10px;">
                     {{> post_card}}

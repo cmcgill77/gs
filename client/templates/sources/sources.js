@@ -177,9 +177,12 @@ Template.sources.rendered = function() {
         random.addData(seriesData);
     }
 
+    // default colors
     var palette = new Rickshaw.Color.Palette({
-        scheme: 'classic9'
+        scheme: 'e360'
     });
+
+
 
     // instantiate our graph!
 

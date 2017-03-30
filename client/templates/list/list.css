@@ -7,3 +7,11 @@
 input:focus {
     outline:none;
 }
+
+.list-graph {
+  display: none;
+}
+
+.graph-show {
+  display:block;
+}
