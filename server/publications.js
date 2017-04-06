@@ -1,3 +1,12 @@
+Meteor.startup(function () {
+  Posts._ensureIndex({ "created": 1});
+  Posts._ensureIndex({ "verificationScore": 1});
+  Posts._ensureIndex({ "body": 1});
+  Sources._ensureIndex({ "author": 1});
+  Sources._ensureIndex({ "levelOfConfidence.locValue": 1});
+  locationCache._ensureIndex({ "locationName": 1})
+});
+
 Meteor.publish('posts', function(options) {
   check(options, {
     sort: Object,

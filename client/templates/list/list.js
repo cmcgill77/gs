@@ -50,19 +50,46 @@ Template.list.helpers({
     },
     loadMoreIcon: () => '<i class="fa fa-chevron-down" aria-hidden="true"></i>',
     listIndex: () => ListIndex,
+    listGraphIndex: () => ListGraphIndex,
+
+
+
+  searchIndexes: function() {
+    return [ListIndex, ListGraphIndex]},
+
+
+
     listSearchResults: function () {
-      console.log(this.title);
+
     },
     updateListGraph: function () {
       listGraph.update();
+    },
+    searchCount: () => {
+      // index instanceof EasySearch.index
+      let dict = ListIndex.getComponentDict(/* optional name */)
+
+      // get the total count of search results, useful when displaying additional information
+      if (dict.get('count') > 0) {
+      return dict.get('count')
+    }
+    },
+    graphData: function () {
+      var graphData = [];
+      graphData.push(this.author);
+      console.log(graphData)
+      return graphData
     }
 })
 Template.list.events({
     'click .sorting': (e) => {
         ListIndex.getComponentMethods()
             .addProps('sortBy', $(e.target).val())
+        ListGraphIndex.getComponentMethods()
+            .addProps('sortBy', $(e.target).val())
     },
     'click #graph-button': function() {
-      console.log(listSearchResults)
+      var results = ListGraphIndex.getComponentMethods().getCursor().fetch()
+      console.log(results)
     }
 })
