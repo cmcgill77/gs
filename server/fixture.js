@@ -25,32 +25,7 @@ if (Posts.find().count() === 0) {
     votes: 0
   });
 
-  Comments.insert({
-    postId: telescopeId,
-    userId: tom._id,
-    author: tom.profile.name,
-    submitted: new Date(now - 5 * 3600 * 1000),
-    body: 'Interesting project Craig, can I get involved?'
-  });
-
-  Comments.insert({
-    postId: telescopeId,
-    userId: sacha._id,
-    author: sacha.profile.name,
-    submitted: new Date(now - 3 * 3600 * 1000),
-    body: 'You sure can tester!'
-  });
-
-  Posts.insert({
-    title: 'Meteor',
-    userId: tom._id,
-    author: tom.profile.name,
-    url: 'http://meteor.com',
-    submitted: new Date(now - 10 * 3600 * 1000),
-    commentsCount: 0,
-    upvoters: [],
-    votes: 0
-  });
+  
 
   Posts.insert({
     title: 'Edge360',

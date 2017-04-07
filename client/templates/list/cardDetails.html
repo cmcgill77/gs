@@ -18,15 +18,10 @@ the originals can safely be be deleted once the dependant templates are updated 
     </ul>
 
   </div>
+  <div class="comment-section">
+    {{> commentsBox id=detailsCommentID}}
 </div>
-  <ul class="comments">
-    {{#each comments}}
-      {{> commentItem}}
-    {{/each}}
-  </ul>
-  {{#if currentUser}}
-    {{> commentSubmit}}
-  {{else}}
-    <p>Please log in to leave a comment.</p>
-  {{/if}}
+</div>
+
+
 </template>

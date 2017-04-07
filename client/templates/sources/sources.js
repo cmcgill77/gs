@@ -3,6 +3,12 @@ Meteor.subscribe('postsBySource');
 
 Template.sources.rendered = function() {
 
+//comments toggle
+  $( "#comments-button" ).click(function() {
+    console.log('comments button clicked')
+    $( "#source-comments" ).toggle();
+  });
+
     //click on search sort type
     $('#loc-sort').trigger('click');
     Session.set('selectedSource', '');
@@ -344,6 +350,11 @@ Template.sources.helpers({
             placeholder: 'Search...',
             type: 'text',
         }
+    },
+
+    'selectedSourceComments': function () {
+
+      return this._id
     },
 
     loadMoreAttributes: () => {

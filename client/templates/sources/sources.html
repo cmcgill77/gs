@@ -114,6 +114,14 @@
 {{#if showSelectedSource}}
         <h5>{{showSelectedSource.author}} <i class="fa {{getSourceType}}" aria-hidden="true"></i></h5>
         <p>Level of Confidence <strong>{{showSelectedSource.levelOfConfidence.locValue}}%</strong></p>
+        <button type="button" id="comments-button" class="btn btn-link">
+            <i class="fa fa-comment" aria-hidden="true"></i>
+            </button>
+        <div id="source-comments">
+          test
+          {{> sourceComments showSelectedSource}}
+        </div>
+
 
         <div class="source-container" style="background: #7f7f84; display: inline-block;">
           {{#each showSelectedPosts}}
