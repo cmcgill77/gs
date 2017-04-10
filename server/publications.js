@@ -20,7 +20,10 @@ Meteor.publish('singlePost', function(id) {
   return Posts.find(id);
 });
 
-
+Meteor.publish ('singleSource', function(id) {
+  check(id, String);
+  return Sources.find(id);
+})
 
 
 Meteor.publish('notifications', function() {

@@ -10,6 +10,7 @@ Template.list.rendered = function() {
     //graph toggle button
     $( "#graph-button" ).click(function() {
       $( "#list-graph" ).toggle();
+      console.log('graph button clicked')
     });
     //set up list view graph
 

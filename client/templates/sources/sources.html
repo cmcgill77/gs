@@ -112,13 +112,19 @@
 			</div>
       <div>
 {{#if showSelectedSource}}
+<div class="row">
+  <div class="col-md-2">
         <h5>{{showSelectedSource.author}} <i class="fa {{getSourceType}}" aria-hidden="true"></i></h5>
         <p>Level of Confidence <strong>{{showSelectedSource.levelOfConfidence.locValue}}%</strong></p>
+      </div>
+      <div class="col-md-2">
         <button type="button" id="comments-button" class="btn btn-link">
-            <i class="fa fa-comment" aria-hidden="true"></i>
+            <i class="fa fa-comment" aria-hidden="true"></i> Comments
             </button>
-        <div id="source-comments">
-          test
+          </div>
+          </div>
+        <div id="list-comments" class="container-fluid">
+
           {{> sourceComments showSelectedSource}}
         </div>
 

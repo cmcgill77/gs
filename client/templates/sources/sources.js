@@ -1,19 +1,28 @@
-Meteor.subscribe('sources');
+//Meteor.subscribe('sources');
 Meteor.subscribe('postsBySource');
+
+
 
 Template.sources.rendered = function() {
 
-//comments toggle
-  $( "#comments-button" ).click(function() {
-    console.log('comments button clicked')
-    $( "#source-comments" ).toggle();
-  });
+
+
 
     //click on search sort type
     $('#loc-sort').trigger('click');
     Session.set('selectedSource', '');
     Session.set('selectedName', '');
     Session.set('graphClicked', false)
+
+    Tracker.autorun(function() {
+      if (Session.get('selectedSource')) {
+        console.log('subscribing')
+
+        Meteor.subscribe('singleSource', Session.get('selectedSource'))
+      }
+    })
+
+
 
 
     //extension logic -- this stuff feeds the graph new data at a set interval and enable the render controls (area, bar, stack stream, etc)
@@ -517,9 +526,16 @@ Template.sources.events({
         Session.set('selectedSource', sourceId);
         Session.set('selectedName', sourceName);
         Session.set('selectedType', sourceType);
+
+
     },
     'click .graph-button': function() {
         //var graphClicked = True;
         Session.set('graphClicked', true);
+    },
+    'click #comments-button': function () {
+      //comments toggle
+        $( "#list-comments" ).toggle();
+        console.log('graph button clicked')
     }
 })

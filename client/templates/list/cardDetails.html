@@ -3,7 +3,7 @@ the originals can safely be be deleted once the dependant templates are updated 
 
 <template name="cardDetails">
 
-  <div class="panel panel-default">
+  <div class="col-md-6">
   <div class="panel-body">
     {{body}}
     location: {{location}}
@@ -22,6 +22,18 @@ the originals can safely be be deleted once the dependant templates are updated 
     {{> commentsBox id=detailsCommentID}}
 </div>
 </div>
+<div class="col-md-6">
+  <div id="details-map"></div>
+</div>
 
+<script>
+
+  $(window).resize(function () {
+  var h = $(window).height(), offsetTop = 64; // Calculate the top offset
+  $mc = $('#details-map');
+  $mc.css('height', (h - offsetTop));
+}).resize();
+
+</script>
 
 </template>
