@@ -30,6 +30,38 @@ Template.post_card.helpers({
             return "fa-instagram"
         }
     },
+    'getVerificationValues': function () {
+      for (i=0; i < this.verificationSteps.count; i++) {
+        return this.verificationSteps[i]
+      }
+    },
+
+    'verificationStepColor': function (value) {
+      if (value > 0 && value <= 10) {
+          return 'verification-level-1';
+      } else if (value > 10 && value <= 19) {
+          return 'verification-level-2';
+      } else if (value > 19 && value <= 29) {
+          return 'verification-level-3';
+      } else if (value > 29 && value <= 39) {
+          return 'verification-level-4';
+      } else if (value > 39 && value <= 49) {
+          return 'verification-level-5';
+      } else if (value > 49 && value <= 59) {
+          return 'verification-level-6';
+      } else if (value > 59 && value <= 69) {
+          return 'verification-level-7';
+      } else if (value > 69 && value <= 79) {
+          return 'verification-level-8';
+      } else if (value > 79 && value <= 89) {
+          return 'verification-level-9';
+      } else if (value > 89 && value <= 100) {
+          return 'verification-level-10';
+      } else {
+          return 'unverified';
+      }
+    },
+
     'verificationColor': function() {
         if (this.verificationScore > 0 && this.verificationScore <= 10) {
             return 'verification-level-1';

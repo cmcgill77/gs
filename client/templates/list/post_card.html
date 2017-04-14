@@ -48,6 +48,15 @@
                     <span class="card-title">Card Title</span> <button type="button" class="close" id="close-info-{{__originalId}}" data-rel="{{__originalId}}" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
 
                     <p>{{body}}</p>
+                    {{#if verified}}
+                  
+
+                    {{#each verificationSteps}}
+                    {{this}}
+                    <!-- <div class="verification-source {{verificationStepColor}}"></div> -->
+
+                    {{/each}}
+                    {{/if}}
                 </div><!-- card reveal -->
             </div>
         </div>

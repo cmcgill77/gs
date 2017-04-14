@@ -22,7 +22,7 @@ Template.cardDetails.rendered = function () {
    if (currentPost.type === 'twitter') {
      var mapIcon = L.ExtraMarkers.icon({
        icon: 'fa-twitter',
-       markerColor: 'blue',
+       markerColor: 'cyan',
        shape: 'circle',
        prefix: 'fa'
      })

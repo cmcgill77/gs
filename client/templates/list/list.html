@@ -1,10 +1,10 @@
 <template name="list">
     <div class="container-fluid">
         <div class="row" style="margin: 10px;">
-            <div id="source-search">
+            <div id="">
                 <i class="fa fa-search" aria-hidden="true"></i>
                 {{> EasySearch.Input indexes=searchIndexes}}
-                {{searchCount}}
+
                 <button id="newest-sort" type="button" value="newest" class="btn btn-link sorting">
                     <i class="fa fa-clock-o" aria-hidden="true"></i>
                     Recent</button>
@@ -14,7 +14,11 @@
                 <button type="button" id="graph-button" class="btn btn-link">
                     <i class="fa fa-area-chart" aria-hidden="true"></i>
                     </button>
+                    {{#if searchCount}}
+                    <p class="results-count">{{searchCount}} results</p>
+                    {{/if}}
             </div>
+
             <div id="list-graph" class="container-fluid">
               {{#EasySearch.Each index=listGraphIndex attributes=inputAttributes}}
                 <!-- {{graphData}} -->

@@ -20,3 +20,10 @@ input:focus {
 #graph-button:hover {
   color: #2196F3;
 }
+
+.results-count {
+  margin-left: 15px;
+  margin-bottom: 0px;
+  font-size: 12px;
+  font-style: italic;
+}
