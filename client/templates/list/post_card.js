@@ -5,12 +5,12 @@ var POST_HEIGHT = 80;
 var Positions = new Meteor.Collection(null);
 
 Template.post_card.rendered = function() {
-
-    $('.show-btn').on('click', function() {
+var currentPost = (Template.currentData())
+    $("#open-info-"+currentPost.__originalId).on('click', function() {
         $('div.card-reveal[data-rel=' + $(this).data('rel') + ']').slideToggle('slow');
     });
 
-    $('.card-reveal .close').on('click', function() {
+    $("#close-info-"+currentPost.__originalId).on('click', function() {
         $('div.card-reveal[data-rel=' + $(this).data('rel') + ']').slideToggle('slow');
     });
 

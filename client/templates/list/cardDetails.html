@@ -1,6 +1,20 @@
 <!-- all templates in the list folder are basically duplicates created from the templates in the posts folder, but using easy-search for search / sorting,
 the originals can safely be be deleted once the dependant templates are updated (map card view and posts by source) -->
 
+<template name="myComments">
+    <ul>
+        {{#each comment}}
+            ...
+            <li>{{content}}</li>
+            ...
+        {{/each}}
+    </ul>
+</template>
+
+<template name="myLoading">
+    <div class="loading-spinner"></div>
+</template>
+
 <template name="cardDetails">
 
   <div class="col-md-6">
@@ -20,10 +34,11 @@ the originals can safely be be deleted once the dependant templates are updated 
   </div>
   <div class="comment-section">
     {{> commentsBox id=detailsCommentID}}
+
 </div>
 </div>
 <div class="col-md-6">
-  <div id="details-map"></div>
+  <div id="details-map">{{map}}</div>
 </div>
 
 <script>

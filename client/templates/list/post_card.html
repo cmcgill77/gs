@@ -12,7 +12,7 @@
                       <div class="card-author"><strong>{{author}}</strong> <i class="fa {{sourceType}}" aria-hidden="true"></i></div>
                     </div>
                       <div class="col-md-1">
-                      <button type="button" class="show-btn btn btn-link pull-right" data-rel="{{__originalId}}" aria-label="Left Align" style="display: inline-block; float: right; color: #424242; font-size: 18px;">
+                      <button type="button" class="show-btn btn btn-link pull-right" id="open-info-{{__originalId}}" data-rel="{{__originalId}}" aria-label="Left Align" style="display: inline-block; float: right; color: #424242; font-size: 18px;">
                           <i class="fa fa-ellipsis-v"></i>
                       </button>
                    </div>
@@ -45,7 +45,7 @@
                     <a style="color: #424242;" href="#" class="upvote btn btn-link {{upvotedClass}}"><i class="fa fa-flag"></i> Flag</a>
                 </div><!-- card actions -->
                 <div class="card-reveal" data-rel="{{__originalId}}">
-                    <span class="card-title">Card Title</span> <button type="button" class="close" data-rel="{{__originalId}}" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <span class="card-title">Card Title</span> <button type="button" class="close" id="close-info-{{__originalId}}" data-rel="{{__originalId}}" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
 
                     <p>{{body}}</p>
                 </div><!-- card reveal -->

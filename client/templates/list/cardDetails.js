@@ -3,9 +3,12 @@
 
 
 Template.cardDetails.rendered = function () {
-  //var post = singlePost.getCursor().fetch();
-  console.log (post)
-  var map = L.map('details-map').setView([latitude, longitude], 13);
+
+ //var postData = Posts.find({_id: postID}).fetch();
+
+  var currentPost = (Template.currentData())
+  console.log (currentPost)
+  var map = L.map('details-map').setView([currentPost.latitude, currentPost.longitude], 15);
 
   var Stamen_Terrain = L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -15,14 +18,44 @@ Template.cardDetails.rendered = function () {
    });
 
    Stamen_Terrain.addTo(map);
+
+   if (currentPost.type === 'twitter') {
+     var mapIcon = L.ExtraMarkers.icon({
+       icon: 'fa-twitter',
+       markerColor: 'blue',
+       shape: 'circle',
+       prefix: 'fa'
+     })
+
+      }
+
+   else if (currentPost.type === 'user') {
+        var mapIcon = L.ExtraMarkers.icon({
+          icon: 'file-text-o',
+          markerColor: 'green',
+          shape: 'circle',
+          prefix: 'fa'
+
+      });
+    }
+
+   //var detailMarker = L.marker([currentPost.latitude, currentPost.longitude]).addTo(map);
+
+   L.marker([currentPost.latitude, currentPost.longitude], {icon: mapIcon}).addTo(map)
+
+
 }
 
 Template.cardDetails.helpers({
   detailsCommentID: function () {
+
     return this._id
   },
 
     body: function() {
         return this.body;
     }
-});
+
+
+
+    });
