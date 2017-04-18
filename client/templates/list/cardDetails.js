@@ -1,4 +1,4 @@
-//TODO:180 need to finish building details page, this stuff is just a placeholder
+//TODO:180 50% need to finish building details page and card back, this stuff is just a placeholder
 
 
 

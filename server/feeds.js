@@ -1,6 +1,6 @@
 //server methods for creating / inserting feeds as well as running feeds (ie getting the data)
 //TODO:110 feeds.js needs a massive refactor, it is kind of a mess.  it's working, but its just so ugly
-//TODO:240 server needs to continously collect all user feeds.  maybe use a worker library to manage rate limits and retry later if exceeded
+//TODO:240 server needs to continously collect all user feeds.  Use synced-cron meteor package
 //TODO:260 store and use user credentials to connect to twitter, google, etc
 //TODO:170 make geo / nogeo feed results behave better (ie if a nogeo post contains geodata make it geo and vice-versa)
 //FIXME catch errors from google geocoder, if it can't find a location, post should be turned into nogeo
